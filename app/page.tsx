@@ -1,6 +1,6 @@
-import CalendarList from "@/app/components/calendar-list";
-import DefaultLayout from "@/app/components/default-layout";
-import Header from "@/app/components/header";
+import CalendarList from '@/app/components/calendar-list'
+import DefaultLayout from '@/app/components/default-layout'
+import Header from '@/app/components/header'
 
 export default function HomePage() {
   return (
@@ -11,5 +11,5 @@ export default function HomePage() {
         end={{ year: 2025, month: 11 }}
       />
     </DefaultLayout>
-  );
+  )
 }
