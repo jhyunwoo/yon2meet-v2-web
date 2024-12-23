@@ -500,6 +500,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@heroicons/react@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@heroicons/react@npm:2.2.0"
+  peerDependencies:
+    react: ">= 16 || ^19.0.0-rc"
+  checksum: 10c0/f8d3cf689b56716339c91df3542f3948115042d1e70e6bc940a3f3e347c0bc78b56aa563917fbd7ce097fe2f38ebb21bffb0db39be914cbc545a754bddae9ab4
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -947,6 +956,15 @@ __metadata:
   dependencies:
     tslib: "npm:^2.8.0"
   checksum: 10c0/33002f74f6f885f04c132960835fdfc474186983ea567606db62e86acd0680ca82f34647e8e610f4e1e422d1c16fce729dde22cd3b797ab1fd9061a825dabca4
+  languageName: node
+  linkType: hard
+
+"@tailwindcss/aspect-ratio@npm:^0.4.2":
+  version: 0.4.2
+  resolution: "@tailwindcss/aspect-ratio@npm:0.4.2"
+  peerDependencies:
+    tailwindcss: ">=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1"
+  checksum: 10c0/c821a8061f80200b20db26f9cf2a711ffb17814adf847a72d4d4632804d1cabf6671df8e99e06cedfb2ba97b968d7843cd435d1201519c86acdde702efca418b
   languageName: node
   linkType: hard
 
@@ -2643,6 +2661,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"framer-motion@npm:^12.0.0-alpha.2":
+  version: 12.0.0-alpha.2
+  resolution: "framer-motion@npm:12.0.0-alpha.2"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^19.0.0-rc.1
+    react-dom: ^19.0.0-rc.1
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10c0/6e60f75b4ee8b8d7c347796602f335233b8604793a16dfc4a1b9403ae348603104fa794f3ded84e3b074b07d3bd0ee2c5ac29d197038ad9b5f81a05bf1b49406
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^3.0.0":
   version: 3.0.3
   resolution: "fs-minipass@npm:3.0.3"
@@ -3261,6 +3299,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jotai@npm:^2.11.0":
+  version: 2.11.0
+  resolution: "jotai@npm:2.11.0"
+  peerDependencies:
+    "@types/react": ">=17.0.0"
+    react: ">=17.0.0"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    react:
+      optional: true
+  checksum: 10c0/4c08ae1c5576788454c1dd00ce5c0c6d10f37041828e6fee4ac5041ec22d9d9a819b836cabcb8155b9778a7459614f72937a01ce2b9d7ddb6c0813451efb1b25
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -3564,6 +3617,27 @@ __metadata:
   bin:
     mkdirp: dist/cjs/src/bin.js
   checksum: 10c0/9f2b975e9246351f5e3a40dcfac99fcd0baa31fbfab615fe059fb11e51f10e4803c63de1f384c54d656e4db31d000e4767e9ef076a22e12a641357602e31d57d
+  languageName: node
+  linkType: hard
+
+"motion@npm:^12.0.0-alpha.2":
+  version: 12.0.0-alpha.2
+  resolution: "motion@npm:12.0.0-alpha.2"
+  dependencies:
+    framer-motion: "npm:^12.0.0-alpha.2"
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^19.0.0-rc.1
+    react-dom: ^19.0.0-rc.1
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10c0/b24587550d58dec40c809870f074de54a90d4805d9ef52096f0e3c892f6a92ad72c8f530569379ca4480b9bb8beeccf36b316a6d0e566447082366df79733faf
   languageName: node
   linkType: hard
 
@@ -5209,6 +5283,8 @@ __metadata:
   dependencies:
     "@auth/drizzle-adapter": "npm:^1.7.4"
     "@eslint/eslintrc": "npm:^3.2.0"
+    "@heroicons/react": "npm:^2.2.0"
+    "@tailwindcss/aspect-ratio": "npm:^0.4.2"
     "@types/node": "npm:^22.10.2"
     "@types/react": "npm:^19.0.2"
     "@types/react-dom": "npm:^19.0.2"
@@ -5218,6 +5294,8 @@ __metadata:
     drizzle-orm: "npm:^0.38.2"
     eslint: "npm:^9.17.0"
     eslint-config-next: "npm:15.1.2"
+    jotai: "npm:^2.11.0"
+    motion: "npm:^12.0.0-alpha.2"
     next: "npm:15.1.2"
     next-auth: "npm:^5.0.0-beta.25"
     postcss: "npm:^8.4.49"

@@ -8,19 +8,23 @@ import {
 } from "react";
 
 export default function useDragToSelect({
-  selected,
-  setSelected,
+  never,
+  setNever,
+  modifiable,
+  setModifiable,
   gridRef,
   NUM_COLS,
   NUM_ROWS,
 }: {
-  selected: Set<number>;
-  setSelected: Dispatch<SetStateAction<Set<number>>>;
+  never: Set<number>;
+  setNever: Dispatch<SetStateAction<Set<number>>>;
+  modifiable: Set<number>;
+  setModifiable: Dispatch<SetStateAction<Set<number>>>;
   gridRef: RefObject<HTMLDivElement | null>;
   NUM_COLS: number;
   NUM_ROWS: number;
 }) {
-  const dragMode = useRef<"select" | "deselect">("select");
+  const dragMode = useRef<"never" | "modifiable" | "remove">("never");
   const isDragging = useRef<boolean>(false);
 
   // Handler to start dragging
@@ -34,16 +38,19 @@ export default function useDragToSelect({
 
       if (boxIndex !== null) {
         // Determine drag mode based on initial box state
-        if (selected.has(boxIndex)) {
-          dragMode.current = "deselect";
-          removeBox(boxIndex);
+        if (never.has(boxIndex)) {
+          dragMode.current = "modifiable";
+          addModifiable(boxIndex);
+        } else if (modifiable.has(boxIndex)) {
+          dragMode.current = "remove";
+          removeModifiable(boxIndex);
         } else {
-          dragMode.current = "select";
-          addBox(boxIndex);
+          dragMode.current = "never";
+          addNever(boxIndex);
         }
       }
     },
-    [selected],
+    [never],
   );
 
   // Handler for dragging over boxes
@@ -53,10 +60,12 @@ export default function useDragToSelect({
     const boxIndex = getBoxIndex(touch.clientX, touch.clientY);
 
     if (boxIndex !== null) {
-      if (dragMode.current === "select") {
-        addBox(boxIndex);
-      } else if (dragMode.current === "deselect") {
-        removeBox(boxIndex);
+      if (dragMode.current === "never") {
+        addNever(boxIndex);
+      } else if (dragMode.current === "remove") {
+        removeModifiable(boxIndex);
+      } else if (dragMode.current === "modifiable") {
+        addModifiable(boxIndex);
       }
     }
   }, []);
@@ -88,8 +97,27 @@ export default function useDragToSelect({
   };
 
   // Add a box to the selection
-  const addBox = (index: number) => {
-    setSelected((prev) => {
+  const addNever = (index: number) => {
+    setNever((prev) => {
+      if (prev.has(index)) {
+        return prev;
+      }
+      const newSelected = new Set(prev);
+      newSelected.add(index);
+      return newSelected;
+    });
+  };
+
+  const addModifiable = (index: number) => {
+    setNever((prev) => {
+      if (!prev.has(index)) {
+        return prev;
+      }
+      const newSelected = new Set(prev);
+      newSelected.delete(index);
+      return newSelected;
+    });
+    setModifiable((prev) => {
       if (prev.has(index)) {
         return prev;
       }
@@ -100,8 +128,8 @@ export default function useDragToSelect({
   };
 
   // Remove a box from the selection
-  const removeBox = (index: number) => {
-    setSelected((prev) => {
+  const removeModifiable = (index: number) => {
+    setModifiable((prev) => {
       if (!prev.has(index)) {
         return prev;
       }

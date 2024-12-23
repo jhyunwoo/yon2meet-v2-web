@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import "./globals.css";
+import StateProvider from "@/app/components/state-provider";
+import NavigationBar from "@/app/components/navigation-bar";
 
 export const metadata: Metadata = {
   title: "Yon2Meet",
@@ -14,7 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body className={"bg-neutral-50"}>
+        <StateProvider>
+          {children}
+          <NavigationBar />
+        </StateProvider>
+      </body>
     </html>
   );
 }

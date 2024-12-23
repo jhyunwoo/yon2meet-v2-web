@@ -1,15 +1,15 @@
-import DragToSelect from "@/app/components/drag-to-select";
+import CalendarList from "@/app/components/calendar-list";
+import DefaultLayout from "@/app/components/default-layout";
+import Header from "@/app/components/header";
 
 export default function HomePage() {
   return (
-    <div
-      className={"w-screen h-screen flex flex-col items-center justify-center"}
-    >
-      <div>Yon2Meet V2</div>
-      <DragToSelect
-        startDate={new Date(2024, 11, 15)}
-        endDate={new Date(2024, 11, 16)}
+    <DefaultLayout>
+      <Header>새로운 약속</Header>
+      <CalendarList
+        start={{ year: 2024, month: 12 }}
+        end={{ year: 2025, month: 11 }}
       />
-    </div>
+    </DefaultLayout>
   );
 }
