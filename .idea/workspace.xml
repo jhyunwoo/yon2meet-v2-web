@@ -7,54 +7,6 @@
     <list default="true" id="b8a5013d-b627-48e0-8d5a-cce24082c93d" name="변경" comment="미팅 일정 보기 추가">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/auth-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/auth-provider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/calendar-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/calendar-list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/calendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/calendar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/default-layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/default-layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/drag-to-select/create-date-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/drag-to-select/create-date-list.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/drag-to-select/create-day-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/create-day-list.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/drag-to-select/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/drag-to-select/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/drag-to-select/time-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/drag-to-select/time-list.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/create-meeting-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/create-meeting-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/reset-date-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/reset-date-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/default-bar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/default-bar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/navigation-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/navigation-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/state-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/state-provider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/meeting-title.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/meeting-title.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/meetings/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/not-found.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema/accounts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema/accounts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema/authenticators.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema/authenticators.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema/meetings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema/meetings.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema/sessions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema/sessions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema/users-to-meetings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema/users-to-meetings.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema/users.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema/verification-tokens.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema/verification-tokens.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drizzle.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/drizzle.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drizzle/meta/0002_snapshot.json" beforeDir="false" afterPath="$PROJECT_DIR$/drizzle/meta/0002_snapshot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drizzle/meta/0003_snapshot.json" beforeDir="false" afterPath="$PROJECT_DIR$/drizzle/meta/0003_snapshot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drizzle/meta/_journal.json" beforeDir="false" afterPath="$PROJECT_DIR$/drizzle/meta/_journal.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fix-string-length.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fix-string-length.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/get-kor-day.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/get-kor-day.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/states.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/states.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/use-drag-to-select.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/use-drag-to-select.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +112,8 @@
       <workItem from="1735012220015" duration="3655000" />
       <workItem from="1735021090831" duration="6373000" />
       <workItem from="1735030989777" duration="3531000" />
-      <workItem from="1735036224621" duration="7842000" />
+      <workItem from="1735036224621" duration="8127000" />
+      <workItem from="1735044363378" duration="114000" />
     </task>
     <task id="LOCAL-00001" summary="prettier 추가, 기본 설정 제거">
       <option name="closed" value="true" />
@@ -226,7 +179,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735029900238</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="미팅 일정 보기 추가">
+      <option name="closed" value="true" />
+      <created>1735044191473</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1735044191473</updated>
+    </task>
+    <task id="LOCAL-00010" summary="미팅 일정 보기 추가">
+      <option name="closed" value="true" />
+      <created>1735044330178</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1735044330178</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
