@@ -13,7 +13,7 @@ export async function createMeeting(formData: FormData) {
   const session = await auth()
 
   if (!startDate || !endDate || !session?.user?.id) {
-    throw new Error()
+    throw new Error("Invalid form data")
   }
 
   const createMeeting = (

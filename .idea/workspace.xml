@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a5013d-b627-48e0-8d5a-cce24082c93d" name="변경" comment="비활성화 날짜 추가">
+    <list default="true" id="b8a5013d-b627-48e0-8d5a-cce24082c93d" name="변경" comment="불필요한 콘솔 삭제">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/schedules-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/schedules-list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/create-day-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/create-day-list.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/auth/sign-in-with-kakao/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/auth/sign-in-with-kakao/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/auth/sign-in-with-kakao/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/auth/sign-in-with-kakao/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -115,7 +120,7 @@
       <workItem from="1735030989777" duration="3531000" />
       <workItem from="1735036224621" duration="8127000" />
       <workItem from="1735044363378" duration="140000" />
-      <workItem from="1735045469620" duration="2720000" />
+      <workItem from="1735045469620" duration="3967000" />
     </task>
     <task id="LOCAL-00001" summary="prettier 추가, 기본 설정 제거">
       <option name="closed" value="true" />
@@ -213,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735053563101</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="불필요한 콘솔 삭제">
+      <option name="closed" value="true" />
+      <created>1735053584500</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1735053584500</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +244,7 @@
     <MESSAGE value="미팅 일정 보기 추가" />
     <MESSAGE value="backup" />
     <MESSAGE value="비활성화 날짜 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="비활성화 날짜 추가" />
+    <MESSAGE value="불필요한 콘솔 삭제" />
+    <option name="LAST_COMMIT_MESSAGE" value="불필요한 콘솔 삭제" />
   </component>
 </project>

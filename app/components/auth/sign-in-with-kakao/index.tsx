@@ -5,7 +5,7 @@ export default function SignInWithKakao({ redirect }: { redirect: string }) {
   const signInWithKakaoWithRedirect = singInWithKakao.bind(null, redirect)
 
   return (
-    <form action={signInWithKakaoWithRedirect}>
+    <form action={signInWithKakaoWithRedirect} className={"w-full"}>
       <KakaoLoginButton />
     </form>
   )

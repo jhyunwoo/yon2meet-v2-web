@@ -15,7 +15,7 @@ export default function CreateMeetingBar() {
   const startRef = useRef<HTMLInputElement>(null)
   const endRef = useRef<HTMLInputElement>(null)
 
-  const { data: session } = useSession()
+  const { status } = useSession()
 
   useEffect(() => {
     if (start && startRef.current) {
@@ -26,9 +26,11 @@ export default function CreateMeetingBar() {
     }
   }, [end, start, startRef, endRef])
 
+  console.log(status)
+
   return (
     <>
-      {session ? (
+      {status === "authenticated" ? (
         <motion.form
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

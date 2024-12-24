@@ -2,17 +2,17 @@
 
 import { useFormStatus } from "react-dom"
 
-export default function KakaoLoginButton() {
+export default function SignOutButton() {
   const { pending } = useFormStatus()
   return (
     <button
       type={"submit"}
       disabled={pending}
       className={
-        "p-2 rounded-xl bg-yellow-400 disabled:bg-yellow-500 transition-all w-full text-lg"
+        "bg-sky-600 text-white p-2 rounded-xl disabled:bg-sky-700 transition-all w-full"
       }
     >
-      {pending ? "로그인 중..." : "카카오로 로그인"}
+      {pending ? "로그아웃 중..." : "로그아웃"}
     </button>
   )
 }

@@ -3,6 +3,7 @@ import { updateMeetingTitle } from "@/app/meetings/[meetingId]/actions"
 import MeetingTitle from "@/app/meetings/[meetingId]/meeting-title"
 import getMeetingData from "@/lib/get-metting-data"
 import SchedulesList from "@/app/meetings/[meetingId]/schedules-list"
+import Link from "next/link"
 
 export default async function MeetingPage({
   params,
@@ -35,6 +36,12 @@ export default async function MeetingPage({
       >
         <MeetingTitle title={meetingData.title} />
       </form>
+      <Link
+        href={`/meetings/${meetingId}/schedule`}
+        className={"p-2 rounded-xl bg-sky-600 text-white mx-4 mb-2 text-center"}
+      >
+        스케줄 추가
+      </Link>
       <div className={"flex snap-x overflow-x-auto overflow-y-hidden h-full"}>
         <SchedulesList meetingId={meetingId} />
       </div>
