@@ -7,7 +7,7 @@ export interface DayListType {
 
 export default function createDayList(startDate: Date, endDate: Date) {
   const dayList: DayListType[] = []
-
+  console.log(startDate, endDate)
   for (let i = 0; i < startDate.getDay(); i++) {
     dayList.push({
       date: addDays(startDate, -(startDate.getDay() - i)),

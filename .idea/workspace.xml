@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a5013d-b627-48e0-8d5a-cce24082c93d" name="변경" comment="미팅 일정 보기 추가">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b8a5013d-b627-48e0-8d5a-cce24082c93d" name="변경" comment="backup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/navigation-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/navigation-button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/meeting-title.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/meeting-title.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/schedules-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/schedules-list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/week-schedule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/week-schedule.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/create-day-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/create-day-list.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/create-week.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/create-week.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +120,8 @@
       <workItem from="1735021090831" duration="6373000" />
       <workItem from="1735030989777" duration="3531000" />
       <workItem from="1735036224621" duration="8127000" />
-      <workItem from="1735044363378" duration="114000" />
+      <workItem from="1735044363378" duration="140000" />
+      <workItem from="1735045469620" duration="2684000" />
     </task>
     <task id="LOCAL-00001" summary="prettier 추가, 기본 설정 제거">
       <option name="closed" value="true" />
@@ -195,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735044330178</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="backup">
+      <option name="closed" value="true" />
+      <created>1735044493774</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1735044493774</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +227,7 @@
     <MESSAGE value="prettier 적용" />
     <MESSAGE value="미팅 생성 기능 추가 및 제목 수정 기능 추가" />
     <MESSAGE value="미팅 일정 보기 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="미팅 일정 보기 추가" />
+    <MESSAGE value="backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="backup" />
   </component>
 </project>

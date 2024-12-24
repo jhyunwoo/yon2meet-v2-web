@@ -25,7 +25,7 @@ export default async function SchedulesList({
   const schedules = await getMeetingSchedules(meetingId)
 
   const weekDataList = createWeek(meetingData.startDate, meetingData.endDate)
-
+  console.log(weekDataList)
   return (
     <div className={"whitespace-nowrap flex gap-4 px-4 h-full"}>
       {weekDataList.map((week, i) => (

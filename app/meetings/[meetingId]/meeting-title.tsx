@@ -12,7 +12,7 @@ export default function MeetingTitle({ title }: { title: string }) {
         defaultValue={title}
         name={"title"}
         className={
-          "p-1 px-2 rounded-xl focus:outline-0 focus:ring-2 ring-sky-500 disabled:bg-sky-100 transition-all bg-neutral-100 text-xl font-bold w-full"
+          "p-1 px-2 rounded-xl focus:outline-0 ring-2 focus:ring-offset-1 focus:ring-sky-700 ring-sky-500 disabled:bg-sky-100 transition-all bg-neutral-100 text-xl font-bold w-full"
         }
       />
       <button

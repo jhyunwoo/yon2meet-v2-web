@@ -28,7 +28,7 @@ export default async function MeetingPage({
   )
 
   return (
-    <div className={"w-full h-screen flex flex-col pb-20"}>
+    <div className={"w-full min-h-screen flex flex-col pb-20"}>
       <form
         className={"flex items-center gap-2 w-full p-4 bg-neutral-100"}
         action={updateMeetingTitleWithId}

@@ -13,34 +13,47 @@ export default function WeekSchedule({
 }) {
   const dateList: Date[] = createDateList(dayList)
 
-  const never: number[] = []
-  const modifiable: number[] = []
+  const never: string[] = []
+  const modifiable: string[] = []
 
   for (let i = 0; i < scheduleList.length; i++) {
     if (scheduleList[i].type === "never") {
-      never.push(i)
+      never.push(scheduleList[i].date.toDateString())
     } else {
-      modifiable.push(i)
+      modifiable.push(scheduleList[i].date.toDateString())
     }
   }
 
   return (
-    <div className={"w-96 snap-center grid grid-cols-7 bg-white rounded-xl"}>
+    <div
+      className={
+        "w-[90vw] snap-center grid grid-cols-7 bg-white rounded-xl p-2"
+      }
+    >
       {dayList.map((day, i) => (
-        <div key={i} className={"text-center text-sm"}>
-          {getKorDay(day.date.getDay())}
+        <div
+          key={i}
+          className={`text-center text-xs flex flex-col items-center justify-center ${i == 0 && "text-red-500"}  ${i == 6 && "text-blue-500"}`}
+        >
+          <p>
+            {day.date.getMonth() + 1}/{day.date.getDate()}
+          </p>
+          <p>{getKorDay(day.date.getDay())}</p>
         </div>
       ))}
       {dateList.map((date, i) => (
         <div
           key={i}
           className={`w-full h-full text-xs transition-all flex justify-center items-center border-[1px] ${
-            never.includes(i)
+            never.includes(date.toDateString())
               ? "bg-green-500 text-white border-green-500"
-              : modifiable.includes(i)
+              : modifiable.includes(date.toDateString())
                 ? "bg-green-800 text-white border-green-800"
-                : "bg-white text-neutral-700 border-neutral-200"
-          }`}
+                : dayList[date.getDay()].isAvailable
+                  ? "bg-white text-neutral-700 border-neutral-200"
+                  : "bg-neutral-300 border-neutral-300 text-neutral-400"
+          }
+          `}
         >
           {fixStringLength(String(date.getHours()), 2, "0")}:
           {fixStringLength(String(date.getMinutes()), 2, "0")}

@@ -16,7 +16,6 @@ export default function CreateMeetingBar() {
   const endRef = useRef<HTMLInputElement>(null)
 
   const { data: session } = useSession()
-  console.log(session)
 
   useEffect(() => {
     if (start && startRef.current) {
