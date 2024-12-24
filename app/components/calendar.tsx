@@ -1,13 +1,13 @@
-'use client'
+"use client"
 
 import {
   startOfMonth,
   endOfMonth,
   eachDayOfInterval,
   isSameDay,
-} from 'date-fns'
-import { useAtom } from 'jotai'
-import { meetingEndState, meetingStartState } from '@/lib/states'
+} from "date-fns"
+import { useAtom } from "jotai"
+import { meetingEndState, meetingStartState } from "@/lib/states"
 
 function getMonthDates(year: number, month: number) {
   const startDate = startOfMonth(new Date(year, month, 1))
@@ -23,17 +23,17 @@ function CalenderHeader() {
   return (
     <>
       <div
-        className={'border-b-2 flex items-center justify-center rounded-tl-lg'}
+        className={"border-b-2 flex items-center justify-center rounded-tl-lg"}
       >
         일
       </div>
-      <div className={'border-b-2 flex items-center justify-center'}>월</div>
-      <div className={'border-b-2 flex items-center justify-center'}>화</div>
-      <div className={'border-b-2 flex items-center justify-center'}>수</div>
-      <div className={'border-b-2 flex items-center justify-center'}>목</div>
-      <div className={'border-b-2 flex items-center justify-center'}>금</div>
+      <div className={"border-b-2 flex items-center justify-center"}>월</div>
+      <div className={"border-b-2 flex items-center justify-center"}>화</div>
+      <div className={"border-b-2 flex items-center justify-center"}>수</div>
+      <div className={"border-b-2 flex items-center justify-center"}>목</div>
+      <div className={"border-b-2 flex items-center justify-center"}>금</div>
       <div
-        className={'border-b-2 flex items-center justify-center rounded-tr-lg'}
+        className={"border-b-2 flex items-center justify-center rounded-tr-lg"}
       >
         토
       </div>
@@ -72,22 +72,22 @@ export default function Calendar({
   }
 
   return (
-    <div className={'flex flex-col items-center justify-center p-4 w-full'}>
-      <div className={'font-semibold text-xl'}>
+    <div className={"flex flex-col items-center justify-center p-4 w-full"}>
+      <div className={"font-semibold text-xl"}>
         {year}년 {month + 1}월
       </div>
-      <div className={'grid grid-cols-7 w-full place-items-stretch aspect-1'}>
+      <div className={"grid grid-cols-7 w-full place-items-stretch aspect-1"}>
         <CalenderHeader />
         {emptyDates.map((_, index) => (
           <div key={index} />
         ))}
         {dates.map((date, index) => (
           <button
-            type={'button'}
+            type={"button"}
             disabled={date.getMonth() !== month}
             onClick={() => handlePickDate(date)}
             key={index}
-            className={`flex items-center justify-center ${isSameDay(date, start!) ? 'rounded-l-xl' : ''} ${isSameDay(date, end!) ? 'rounded-r-xl' : ''} ${isSameDay(date, start!) || isSameDay(date, end!) ? 'bg-sky-700 text-white' : ''} ${start! < date && date < end! ? 'bg-sky-600/70 text-white' : ''} ${date.getDay() === 0 && !(isSameDay(date, start!) || isSameDay(date, end!)) ? 'text-red-600' : ''} ${date.getDay() === 6 && !(isSameDay(date, start!) || isSameDay(date, end!)) ? 'text-blue-600' : ''}`}
+            className={`flex items-center justify-center ${isSameDay(date, start!) ? "rounded-l-xl" : ""} ${isSameDay(date, end!) ? "rounded-r-xl" : ""} ${isSameDay(date, start!) || isSameDay(date, end!) ? "bg-sky-700 text-white" : ""} ${start! < date && date < end! ? "bg-sky-600/70 text-white" : ""} ${date.getDay() === 0 && !(isSameDay(date, start!) || isSameDay(date, end!)) ? "text-red-600" : ""} ${date.getDay() === 6 && !(isSameDay(date, start!) || isSameDay(date, end!)) ? "text-blue-600" : ""}`}
           >
             <div>{date.getDate()}</div>
           </button>

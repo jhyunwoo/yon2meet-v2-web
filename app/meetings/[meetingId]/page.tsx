@@ -1,9 +1,8 @@
-import db from '@/db'
-import { eq } from 'drizzle-orm'
-import { meetings } from '@/db/schema/meetings'
-import { redirect } from 'next/navigation'
-import { updateMeetingTitle } from '@/app/meetings/[meetingId]/actions'
-import MeetingTitle from '@/app/meetings/[meetingId]/meeting-title'
+import { redirect } from "next/navigation"
+import { updateMeetingTitle } from "@/app/meetings/[meetingId]/actions"
+import MeetingTitle from "@/app/meetings/[meetingId]/meeting-title"
+import getMeetingData from "@/lib/get-metting-data"
+import SchedulesList from "@/app/meetings/[meetingId]/schedules-list"
 
 export default async function MeetingPage({
   params,
@@ -11,36 +10,34 @@ export default async function MeetingPage({
   params: Promise<{ meetingId: string }>
 }) {
   const { meetingId } = await params
-  try {
-    const meetingData = (
-      await db
-        .select()
-        .from(meetings)
-        .where(eq(meetings.id, meetingId))
-        .limit(1)
-    )[0]
 
-    const meetingIdFormData = new FormData()
-    meetingIdFormData.set('id', meetingId)
+  const meetingData = await getMeetingData(meetingId)
 
-    const updateMeetingTitleWithId = updateMeetingTitle.bind(
-      null,
-      meetingIdFormData
-    )
-
-    return (
-      <div className={'w-screen h-screen flex flex-col pb-20'}>
-        <form
-          className={'flex items-center gap-2 w-full p-4 bg-neutral-100'}
-          action={updateMeetingTitleWithId}
-        >
-          <MeetingTitle title={meetingData.title} />
-        </form>
-        <div>{meetingData.startDate.toDateString()}</div>
-        <div>{meetingData.endDate.toDateString()}</div>
-      </div>
-    )
-  } catch {
-    redirect('/not-found')
+  // Meeting Data를 찾을 수 없을 시 Not Found로 이동
+  if (!meetingData) {
+    redirect("/not-found")
   }
+
+  // action 에 meeting ID 추가 전달을 위한 Form Data
+  const meetingIdFormData = new FormData()
+  meetingIdFormData.set("id", meetingId)
+
+  const updateMeetingTitleWithId = updateMeetingTitle.bind(
+    null,
+    meetingIdFormData
+  )
+
+  return (
+    <div className={"w-full h-screen flex flex-col pb-20"}>
+      <form
+        className={"flex items-center gap-2 w-full p-4 bg-neutral-100"}
+        action={updateMeetingTitleWithId}
+      >
+        <MeetingTitle title={meetingData.title} />
+      </form>
+      <div className={"flex snap-x overflow-x-auto overflow-y-hidden h-full"}>
+        <SchedulesList meetingId={meetingId} />
+      </div>
+    </div>
+  )
 }

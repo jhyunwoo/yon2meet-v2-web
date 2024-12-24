@@ -1,5 +1,5 @@
-import { differenceInMonths } from 'date-fns'
-import Calendar from './calendar'
+import { differenceInMonths } from "date-fns"
+import Calendar from "./calendar"
 
 interface MonthType {
   year: number
@@ -40,7 +40,7 @@ export default function CalendarList({
   }
 
   return (
-    <div className={'overflow-y-scroll w-full'}>
+    <div className={"overflow-y-scroll w-full"}>
       {monthList.map((date, index) => (
         <Calendar year={date.year} month={date.month} key={index} />
       ))}

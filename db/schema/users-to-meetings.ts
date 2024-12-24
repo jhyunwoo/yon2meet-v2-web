@@ -1,15 +1,15 @@
-import { pgTable, primaryKey, text, uuid } from 'drizzle-orm/pg-core'
-import { users } from '@/db/schema/users'
-import { meetings } from '@/db/schema/meetings'
-import { relations } from 'drizzle-orm'
+import { pgTable, primaryKey, text, uuid } from "drizzle-orm/pg-core"
+import { users } from "@/db/schema/users"
+import { meetings } from "@/db/schema/meetings"
+import { relations } from "drizzle-orm"
 
 export const usersToMeetings = pgTable(
-  'users_to_groups',
+  "usersToMeetings",
   {
-    userId: text('userId')
+    userId: text("userId")
       .notNull()
       .references(() => users.id),
-    meetingId: uuid('meetingId')
+    meetingId: uuid("meetingId")
       .notNull()
       .references(() => meetings.id),
   },

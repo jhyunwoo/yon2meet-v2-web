@@ -1,4 +1,4 @@
-import { addDays } from 'date-fns'
+import { addDays } from "date-fns"
 
 export interface DayListType {
   date: Date
@@ -9,10 +9,13 @@ export default function createDayList(startDate: Date, endDate: Date) {
   const dayList: DayListType[] = []
 
   for (let i = 0; i < startDate.getDay(); i++) {
-    dayList.push({ date: addDays(startDate, i), isAvailable: false })
+    dayList.push({
+      date: addDays(startDate, -(startDate.getDay() - i)),
+      isAvailable: false,
+    })
   }
 
-  for (let i = 0; i <= endDate.getDay(); i++) {
+  for (let i = 0; i <= endDate.getDay() - startDate.getDay(); i++) {
     dayList.push({ date: addDays(startDate, i), isAvailable: true })
   }
 

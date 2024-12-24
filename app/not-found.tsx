@@ -1,4 +1,4 @@
-import DefaultLayout from '@/app/components/default-layout'
+import DefaultLayout from "@/app/components/default-layout"
 
 export default function NotFound() {
   return (

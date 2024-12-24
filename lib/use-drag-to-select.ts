@@ -5,7 +5,7 @@ import {
   RefObject,
   useEffect,
   useRef,
-} from 'react'
+} from "react"
 
 export default function useDragToSelect({
   never,
@@ -24,7 +24,7 @@ export default function useDragToSelect({
   NUM_COLS: number
   NUM_ROWS: number
 }) {
-  const dragMode = useRef<'never' | 'modifiable' | 'remove'>('never')
+  const dragMode = useRef<"never" | "modifiable" | "remove">("never")
   const isDragging = useRef<boolean>(false)
 
   // Handler to start dragging
@@ -39,13 +39,13 @@ export default function useDragToSelect({
       if (boxIndex !== null) {
         // Determine drag mode based on initial box state
         if (never.has(boxIndex)) {
-          dragMode.current = 'modifiable'
+          dragMode.current = "modifiable"
           addModifiable(boxIndex)
         } else if (modifiable.has(boxIndex)) {
-          dragMode.current = 'remove'
+          dragMode.current = "remove"
           removeModifiable(boxIndex)
         } else {
-          dragMode.current = 'never'
+          dragMode.current = "never"
           addNever(boxIndex)
         }
       }
@@ -60,11 +60,11 @@ export default function useDragToSelect({
     const boxIndex = getBoxIndex(touch.clientX, touch.clientY)
 
     if (boxIndex !== null) {
-      if (dragMode.current === 'never') {
+      if (dragMode.current === "never") {
         addNever(boxIndex)
-      } else if (dragMode.current === 'remove') {
+      } else if (dragMode.current === "remove") {
         removeModifiable(boxIndex)
-      } else if (dragMode.current === 'modifiable') {
+      } else if (dragMode.current === "modifiable") {
         addModifiable(boxIndex)
       }
     }
@@ -144,17 +144,17 @@ export default function useDragToSelect({
     if (!grid) return
 
     // Add event listeners for touch interactions
-    grid.addEventListener('touchstart', handleTouchStart, { passive: false })
-    grid.addEventListener('touchmove', handleTouchMove, { passive: false })
-    grid.addEventListener('touchend', handleTouchEnd)
-    grid.addEventListener('touchcancel', handleTouchEnd)
+    grid.addEventListener("touchstart", handleTouchStart, { passive: false })
+    grid.addEventListener("touchmove", handleTouchMove, { passive: false })
+    grid.addEventListener("touchend", handleTouchEnd)
+    grid.addEventListener("touchcancel", handleTouchEnd)
 
     // Cleanup event listeners on unmount
     return () => {
-      grid.removeEventListener('touchstart', handleTouchStart)
-      grid.removeEventListener('touchmove', handleTouchMove)
-      grid.removeEventListener('touchend', handleTouchEnd)
-      grid.removeEventListener('touchcancel', handleTouchEnd)
+      grid.removeEventListener("touchstart", handleTouchStart)
+      grid.removeEventListener("touchmove", handleTouchMove)
+      grid.removeEventListener("touchend", handleTouchEnd)
+      grid.removeEventListener("touchcancel", handleTouchEnd)
     }
   }, [handleTouchStart, handleTouchMove, handleTouchEnd])
 }

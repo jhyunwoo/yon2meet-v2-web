@@ -1,20 +1,20 @@
 export default function getKorDay(index: number) {
   switch (index) {
     case 0:
-      return '일'
+      return "일"
     case 1:
-      return '월'
+      return "월"
     case 2:
-      return '화'
+      return "화"
     case 3:
-      return '수'
+      return "수"
     case 4:
-      return '목'
+      return "목"
     case 5:
-      return '금'
+      return "금"
     case 6:
-      return '토'
+      return "토"
     default:
-      return ''
+      return ""
   }
 }

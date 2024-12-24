@@ -1,23 +1,32 @@
-'use server'
+"use server"
 
-import db from '@/db'
-import { meetings } from '@/db/schema/meetings'
-import { redirect } from 'next/navigation'
+import db from "@/db"
+import { meetings } from "@/db/schema/meetings"
+import { redirect } from "next/navigation"
+import { auth } from "@/auth"
+import { usersToMeetings } from "@/db/schema/users-to-meetings"
 
 export async function createMeeting(formData: FormData) {
-  const startDate = formData.get('start') as string
-  const endDate = formData.get('end') as string
+  const startDate = formData.get("start") as string
+  const endDate = formData.get("end") as string
 
-  console.log(new Date(startDate), new Date(endDate))
+  const session = await auth()
 
-  if (!startDate || !endDate) {
+  if (!startDate || !endDate || !session?.user?.id) {
     throw new Error()
   }
 
-  const createMeeting = await db
-    .insert(meetings)
-    .values({ startDate: new Date(startDate), endDate: new Date(endDate) })
-    .returning({ id: meetings.id })
+  const createMeeting = (
+    await db
+      .insert(meetings)
+      .values({ startDate: new Date(startDate), endDate: new Date(endDate) })
+      .returning({ id: meetings.id })
+  )[0]
 
-  redirect(`/meetings/${createMeeting[0].id}`)
+  // Connect the user to the meeting
+  await db
+    .insert(usersToMeetings)
+    .values({ userId: session.user.id, meetingId: createMeeting.id })
+
+  redirect(`/meetings/${createMeeting.id}`)
 }

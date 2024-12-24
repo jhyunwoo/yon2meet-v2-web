@@ -1,5 +1,5 @@
-import DefaultLayout from '@/app/components/default-layout'
-import Header from '@/app/components/header'
+import DefaultLayout from "@/app/components/default-layout"
+import Header from "@/app/components/header"
 
 export default function ProfilePage() {
   return (
