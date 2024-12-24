@@ -4,18 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a5013d-b627-48e0-8d5a-cce24082c93d" name="변경" comment="드래그 선택 창 추가">
+    <list default="true" id="b8a5013d-b627-48e0-8d5a-cce24082c93d" name="변경" comment="미팅 생성 기능 추가 및 제목 수정 기능 추가">
+      <change afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/create-meeting-button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/reset-date-button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/meeting-title.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/not-found.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drizzle/0002_first_grim_reaper.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drizzle/0003_bent_misty_knight.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drizzle/meta/0002_snapshot.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drizzle/meta/0003_snapshot.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/drag-to-select.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/calendar-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/calendar-list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/calendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/calendar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/actions.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/drizzle.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/drizzle.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/use-drag-to-select.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/use-drag-to-select.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema/meetings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema/meetings.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drizzle/meta/_journal.json" beforeDir="false" afterPath="$PROJECT_DIR$/drizzle/meta/_journal.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +36,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -65,7 +75,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jhyunwoo/projects/yon2meet-v2-web/app/components&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jhyunwoo/projects/yon2meet-v2-web&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -89,9 +99,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar" />
       <recent name="$PROJECT_DIR$/app/components/navigation-bar" />
     </key>
   </component>
@@ -113,7 +125,9 @@
       <workItem from="1734883977785" duration="1075000" />
       <workItem from="1734940292328" duration="16466000" />
       <workItem from="1734965397042" duration="25000" />
-      <workItem from="1734965433093" duration="7628000" />
+      <workItem from="1734965433093" duration="8040000" />
+      <workItem from="1735012220015" duration="3655000" />
+      <workItem from="1735021090831" duration="6282000" />
     </task>
     <task id="LOCAL-00001" summary="prettier 추가, 기본 설정 제거">
       <option name="closed" value="true" />
@@ -155,7 +169,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734955595795</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="미팅 생성 버튼 추가 및 데이터베이스 구조 설정">
+      <option name="closed" value="true" />
+      <created>1734973667983</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734973667983</updated>
+    </task>
+    <task id="LOCAL-00007" summary="prettier 적용">
+      <option name="closed" value="true" />
+      <created>1734973941534</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1734973941534</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +197,9 @@
     <MESSAGE value="DB 연결" />
     <MESSAGE value="webstorm 수정 깃 제외" />
     <MESSAGE value="드래그 선택 창 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="드래그 선택 창 추가" />
+    <MESSAGE value="미팅 생성 버튼 추가 및 데이터베이스 구조 설정" />
+    <MESSAGE value="prettier 적용" />
+    <MESSAGE value="미팅 생성 기능 추가 및 제목 수정 기능 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="미팅 생성 기능 추가 및 제목 수정 기능 추가" />
   </component>
 </project>

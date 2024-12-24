@@ -1,15 +1,15 @@
-import * as accounts from '@/db/schema/accounts'
-import * as authenticators from '@/db/schema/authenticators'
-import * as users from '@/db/schema/users'
-import * as meetings from '@/db/schema/meetings'
-import * as sessions from '@/db/schema/sessions'
-import * as verificationTokens from '@/db/schema/verification-tokens'
+import * as accountsSchema from '@/db/schema/accounts'
+import * as authenticatorsSchema from '@/db/schema/authenticators'
+import * as usersSchema from '@/db/schema/users'
+import * as meetingsSchema from '@/db/schema/meetings'
+import * as sessionsSchema from '@/db/schema/sessions'
+import * as verificationTokensSchema from '@/db/schema/verification-tokens'
 
 export {
-  accounts,
-  users,
-  meetings,
-  authenticators,
-  sessions,
-  verificationTokens,
+  accountsSchema,
+  usersSchema,
+  meetingsSchema,
+  authenticatorsSchema,
+  sessionsSchema,
+  verificationTokensSchema,
 }

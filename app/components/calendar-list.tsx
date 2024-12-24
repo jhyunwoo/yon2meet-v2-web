@@ -13,8 +13,8 @@ export default function CalendarList({
   start: MonthType
   end: MonthType
 }) {
-  const startDate = new Date(start.year, start.month - 1)
-  const endDate = new Date(end.year, end.month - 1)
+  const startDate = new Date(start.year, start.month)
+  const endDate = new Date(end.year, end.month)
 
   const monthsBetween = differenceInMonths(endDate, startDate) + 1
 
@@ -23,14 +23,14 @@ export default function CalendarList({
   let startYear = start.year
   let startMonth = start.month
   for (let i = 0; i < monthsBetween; i++) {
-    if (startMonth <= 12) {
+    if (startMonth < 12) {
       monthList.push({
         year: startYear,
         month: startMonth,
       })
     } else {
       startYear++
-      startMonth = 1
+      startMonth = 0
       monthList.push({
         year: startYear,
         month: startMonth,
