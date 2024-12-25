@@ -29,7 +29,6 @@ export default function DragToSelect({ dayList }: { dayList: DayListType[] }) {
     gridRef,
     NUM_COLS,
     NUM_ROWS,
-    dayList,
   })
 
   // Render all boxes in the grid
