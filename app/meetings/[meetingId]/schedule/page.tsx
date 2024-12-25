@@ -1,5 +1,4 @@
 import getMeetingData from "@/lib/get-metting-data"
-import createWeek from "@/lib/create-week"
 import SelectSchedule from "@/app/meetings/[meetingId]/schedule/select-schedule"
 
 export default async function SchedulePage({
@@ -9,7 +8,6 @@ export default async function SchedulePage({
 }) {
   const { meetingId } = await params
   const meetingData = await getMeetingData(meetingId)
-  const weekDataList = createWeek(meetingData.startDate, meetingData.endDate)
 
   return (
     <div className={"w-screen h-screen flex flex-col pb-20 p-2"}>
@@ -27,7 +25,10 @@ export default async function SchedulePage({
           <p>조정 가능한 시간</p>
         </div>
       </div>
-      <SelectSchedule weekDateList={weekDataList} />
+      <SelectSchedule
+        startDate={meetingData.startDate}
+        endDate={meetingData.endDate}
+      />
     </div>
   )
 }

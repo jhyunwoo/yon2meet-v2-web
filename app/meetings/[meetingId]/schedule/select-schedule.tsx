@@ -3,17 +3,21 @@
 import DragToSelect from "@/app/components/drag-to-select"
 import { schedulePageState } from "@/lib/states"
 import { useAtom } from "jotai"
-import { DayListType } from "@/lib/create-day-list"
 import { useEffect, useState } from "react"
+import createWeek from "@/lib/create-week"
 
 export default function SelectSchedule({
-  weekDateList,
+  startDate,
+  endDate,
 }: {
-  weekDateList: DayListType[][]
+  startDate: Date
+  endDate: Date
 }) {
   const [schedulePage, setSchedulePage] = useAtom(schedulePageState)
   const [maxPage, setMaxPage] = useState(0)
   const [page, setPage] = useState(0)
+
+  const weekDateList = createWeek(startDate, endDate)
 
   useEffect(() => {
     setMaxPage(weekDateList.length - 1)
