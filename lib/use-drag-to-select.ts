@@ -28,30 +28,27 @@ export default function useDragToSelect({
   const isDragging = useRef<boolean>(false)
 
   // Handler to start dragging
-  const handleTouchStart = useCallback(
-    (e: TouchEvent) => {
-      e.preventDefault()
-      isDragging.current = true
+  const handleTouchStart = (e: TouchEvent) => {
+    e.preventDefault()
+    isDragging.current = true
 
-      const touch = e.touches[0]
-      const boxIndex = getBoxIndex(touch.clientX, touch.clientY)
+    const touch = e.touches[0]
+    const boxIndex = getBoxIndex(touch.clientX, touch.clientY)
 
-      if (boxIndex !== null) {
-        // Determine drag mode based on initial box state
-        if (never.has(boxIndex)) {
-          dragMode.current = "modifiable"
-          addModifiable(boxIndex)
-        } else if (modifiable.has(boxIndex)) {
-          dragMode.current = "remove"
-          removeModifiable(boxIndex)
-        } else {
-          dragMode.current = "never"
-          addNever(boxIndex)
-        }
+    if (boxIndex !== null) {
+      // Determine drag mode based on initial box state
+      if (never.has(boxIndex)) {
+        dragMode.current = "modifiable"
+        addModifiable(boxIndex)
+      } else if (modifiable.has(boxIndex)) {
+        dragMode.current = "remove"
+        removeModifiable(boxIndex)
+      } else {
+        dragMode.current = "never"
+        addNever(boxIndex)
       }
-    },
-    [never]
-  )
+    }
+  }
 
   // Handler for dragging over boxes
   const handleTouchMove = useCallback((e: TouchEvent) => {

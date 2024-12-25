@@ -29,6 +29,7 @@ export default function DragToSelect({ dayList }: { dayList: DayListType[] }) {
     gridRef,
     NUM_COLS,
     NUM_ROWS,
+    dayList,
   })
 
   // Render all boxes in the grid
@@ -62,14 +63,8 @@ export default function DragToSelect({ dayList }: { dayList: DayListType[] }) {
       ref={gridRef}
     >
       {dayList.map((day, i) => (
-        <div
-          key={i}
-          className={`text-center text-xs flex flex-col items-center justify-center ${i == 0 && "text-red-500"}  ${i == 6 && "text-blue-500"}`}
-        >
-          <p>
-            {day.date.getMonth() + 1}/{day.date.getDate()}
-          </p>
-          <p>{getKorDay(day.date.getDay())}</p>
+        <div key={i} className={"text-center"}>
+          {getKorDay(day.date.getDay())}
         </div>
       ))}
       {renderBoxes()}
