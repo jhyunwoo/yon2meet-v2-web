@@ -7,9 +7,9 @@
         @apply bg-neutral-300 border-neutral-300 text-neutral-400;
     }
     .never-time {
-        @apply bg-sky-500 text-white border-sky-500;
+        @apply bg-sky-800 text-white border-sky-800;
     }
     .modifiable-time {
-        @apply bg-sky-800 text-white border-sky-800;
+        @apply bg-sky-500 text-white border-sky-500;
     }
 }

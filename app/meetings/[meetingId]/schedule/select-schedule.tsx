@@ -31,5 +31,12 @@ export default function SelectSchedule({
     }
   }, [maxPage, schedulePage])
 
-  return <DragToSelect dayList={weekDateList[page]} />
+  return (
+    <div className={"w-full h-full flex"}>
+      <DragToSelect dayList={weekDateList[page]} />
+      <div
+        className={"w-3 h-full bg-sky-800/50 ring-2 ring-sky-800 rounded-full"}
+      />
+    </div>
+  )
 }
