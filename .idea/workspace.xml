@@ -4,15 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a5013d-b627-48e0-8d5a-cce24082c93d" name="변경" comment="불필요한 콘솔 삭제">
+    <list default="true" id="b8a5013d-b627-48e0-8d5a-cce24082c93d" name="변경" comment="파라미터 활용">
+      <change afterPath="$PROJECT_DIR$/app/components/auth/sign-out-button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/loading-spinner.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/set-start-end-params.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/share-button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drizzle/0007_last_robin_chapel.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drizzle/0008_spooky_wild_pack.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drizzle/meta/0007_snapshot.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drizzle/meta/0008_snapshot.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/auth/sign-in-with-kakao/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/auth/sign-in-with-kakao/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/auth/sign-in-with-kakao/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/auth/sign-in-with-kakao/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/auth/sign-out/actions.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/auth/sign-out/button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/auth/sign-out/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/default-layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/default-layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/reset-date-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/reset-date-button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/default-bar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/default-bar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/meeting-title.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/meeting-title.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/schedule/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/schedule/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema/users-to-meetings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema/users-to-meetings.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drizzle/meta/_journal.json" beforeDir="false" afterPath="$PROJECT_DIR$/drizzle/meta/_journal.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,24 +72,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jhyunwoo/projects/yon2meet-v2-web&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;yarn:package.json:prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;yarn:package.json:typescript&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/jhyunwoo/projects/yon2meet-v2-web/app/components",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "prettierjs.PrettierConfiguration.Package": "yarn:package.json:prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "yarn:package.json:typescript",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -86,8 +101,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/components" />
+      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
@@ -120,7 +135,8 @@
       <workItem from="1735030989777" duration="3531000" />
       <workItem from="1735036224621" duration="8127000" />
       <workItem from="1735044363378" duration="140000" />
-      <workItem from="1735045469620" duration="3967000" />
+      <workItem from="1735045469620" duration="4086000" />
+      <workItem from="1735107820178" duration="6580000" />
     </task>
     <task id="LOCAL-00001" summary="prettier 추가, 기본 설정 제거">
       <option name="closed" value="true" />
@@ -226,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735053584500</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="로그아웃 버튼 추가">
+      <option name="closed" value="true" />
+      <created>1735054905768</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1735054905768</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +269,8 @@
     <MESSAGE value="backup" />
     <MESSAGE value="비활성화 날짜 추가" />
     <MESSAGE value="불필요한 콘솔 삭제" />
-    <option name="LAST_COMMIT_MESSAGE" value="불필요한 콘솔 삭제" />
+    <MESSAGE value="로그아웃 버튼 추가" />
+    <MESSAGE value="파라미터 활용" />
+    <option name="LAST_COMMIT_MESSAGE" value="파라미터 활용" />
   </component>
 </project>

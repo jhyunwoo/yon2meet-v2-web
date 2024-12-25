@@ -50,6 +50,20 @@
       "when": 1735039509512,
       "tag": "0006_closed_lizard",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1735112411597,
+      "tag": "0007_last_robin_chapel",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1735112474334,
+      "tag": "0008_spooky_wild_pack",
+      "breakpoints": true
     }
   ]
 }

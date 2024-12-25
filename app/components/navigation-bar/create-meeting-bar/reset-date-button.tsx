@@ -2,11 +2,13 @@ import { useAtom } from "jotai"
 import { meetingEndState, meetingStartState } from "@/lib/states"
 import { TrashIcon } from "@heroicons/react/24/outline"
 import { useFormStatus } from "react-dom"
+import { useRouter } from "next/navigation"
 
 export default function ResetDateButton() {
   const [, setStart] = useAtom(meetingStartState)
   const [, setEnd] = useAtom(meetingEndState)
   const { pending } = useFormStatus()
+  const router = useRouter()
 
   return (
     <button
@@ -17,6 +19,7 @@ export default function ResetDateButton() {
       onClick={() => {
         setStart(undefined)
         setEnd(undefined)
+        router.replace("/")
       }}
       disabled={pending}
     >

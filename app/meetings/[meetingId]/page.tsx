@@ -4,6 +4,7 @@ import MeetingTitle from "@/app/meetings/[meetingId]/meeting-title"
 import getMeetingData from "@/lib/get-metting-data"
 import SchedulesList from "@/app/meetings/[meetingId]/schedules-list"
 import Link from "next/link"
+import ShareButton from "@/app/meetings/[meetingId]/share-button"
 
 export default async function MeetingPage({
   params,
@@ -36,12 +37,15 @@ export default async function MeetingPage({
       >
         <MeetingTitle title={meetingData.title} />
       </form>
-      <Link
-        href={`/meetings/${meetingId}/schedule`}
-        className={"p-2 rounded-xl bg-sky-600 text-white mx-4 mb-2 text-center"}
-      >
-        스케줄 추가
-      </Link>
+      <div className={"flex items-center justify-around gap-2 w-full px-4"}>
+        <Link
+          href={`/meetings/${meetingId}/schedule`}
+          className={"p-2 rounded-xl w-2/3 bg-sky-600 text-white text-center"}
+        >
+          스케줄 추가
+        </Link>
+        <ShareButton meetingId={meetingId} />
+      </div>
       <div className={"flex snap-x overflow-x-auto overflow-y-hidden h-full"}>
         <SchedulesList meetingId={meetingId} />
       </div>

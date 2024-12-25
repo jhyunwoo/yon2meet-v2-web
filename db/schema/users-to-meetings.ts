@@ -8,10 +8,16 @@ export const usersToMeetings = pgTable(
   {
     userId: text("userId")
       .notNull()
-      .references(() => users.id),
+      .references(() => users.id, {
+        onUpdate: "cascade",
+        onDelete: "cascade",
+      }),
     meetingId: uuid("meetingId")
       .notNull()
-      .references(() => meetings.id),
+      .references(() => meetings.id, {
+        onUpdate: "cascade",
+        onDelete: "cascade",
+      }),
   },
   (t) => ({
     pk: primaryKey({ columns: [t.userId, t.meetingId] }),

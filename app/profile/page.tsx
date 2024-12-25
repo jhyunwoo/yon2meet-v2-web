@@ -1,8 +1,8 @@
 import DefaultLayout from "@/app/components/default-layout"
 import Header from "@/app/components/header"
-import SignOut from "@/app/components/auth/sign-out"
 import { auth } from "@/auth"
 import SignInWithKakao from "@/app/components/auth/sign-in-with-kakao"
+import SignOutButton from "@/app/components/auth/sign-out-button"
 
 export default async function ProfilePage() {
   const session = await auth()
@@ -21,7 +21,7 @@ export default async function ProfilePage() {
     <DefaultLayout>
       <Header>프로필</Header>
       <div className={"w-full p-4"}>
-        <SignOut />
+        <SignOutButton />
       </div>
     </DefaultLayout>
   )
