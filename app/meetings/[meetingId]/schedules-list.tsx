@@ -1,15 +1,16 @@
+"use client"
+
 import getMeetingSchedules from "@/lib/get-meeting-schedules"
 import WeekSchedule from "@/app/meetings/[meetingId]/week-schedule"
 import createWeek from "@/lib/create-week"
-import getMeetingData from "@/lib/get-metting-data"
 
 export default async function SchedulesList({
   meetingId,
+  meetingData,
 }: {
   meetingId: string
+  meetingData: { id: string; title: string; startDate: Date; endDate: Date }
 }) {
-  const meetingData = await getMeetingData(meetingId)
-
   const schedules = await getMeetingSchedules(meetingId)
 
   const weekDataList = createWeek(meetingData.startDate, meetingData.endDate)
