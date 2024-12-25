@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a5013d-b627-48e0-8d5a-cce24082c93d" name="변경" comment="파라미터 활용">
-      <change afterPath="$PROJECT_DIR$/app/components/auth/sign-out-button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/loading-spinner.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/set-start-end-params.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/share-button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drizzle/0007_last_robin_chapel.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drizzle/0008_spooky_wild_pack.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drizzle/meta/0007_snapshot.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drizzle/meta/0008_snapshot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/auth/sign-out/actions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/auth/sign-out/button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/auth/sign-out/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/default-layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/default-layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/reset-date-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/create-meeting-bar/reset-date-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation-bar/default-bar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation-bar/default-bar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/meeting-title.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/meeting-title.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/meetings/[meetingId]/schedule/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/meetings/[meetingId]/schedule/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema/users-to-meetings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema/users-to-meetings.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drizzle/meta/_journal.json" beforeDir="false" afterPath="$PROJECT_DIR$/drizzle/meta/_journal.json" afterDir="false" />
-    </list>
+    <list default="true" id="b8a5013d-b627-48e0-8d5a-cce24082c93d" name="변경" comment="파라미터 활용" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +36,9 @@
 }</component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -136,7 +115,7 @@
       <workItem from="1735036224621" duration="8127000" />
       <workItem from="1735044363378" duration="140000" />
       <workItem from="1735045469620" duration="4086000" />
-      <workItem from="1735107820178" duration="6580000" />
+      <workItem from="1735107820178" duration="6699000" />
     </task>
     <task id="LOCAL-00001" summary="prettier 추가, 기본 설정 제거">
       <option name="closed" value="true" />
@@ -250,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735054905768</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="파라미터 활용">
+      <option name="closed" value="true" />
+      <created>1735120029882</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1735120029883</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
