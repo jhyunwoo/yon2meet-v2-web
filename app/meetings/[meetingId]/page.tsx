@@ -5,6 +5,7 @@ import getMeetingData from "@/lib/get-metting-data"
 import SchedulesList from "@/app/meetings/[meetingId]/schedules-list"
 import Link from "next/link"
 import ShareButton from "@/app/meetings/[meetingId]/share-button"
+import getMeetingSchedules from "@/lib/get-meeting-schedules"
 
 export default async function MeetingPage({
   params,
@@ -14,6 +15,7 @@ export default async function MeetingPage({
   const { meetingId } = await params
 
   const meetingData = await getMeetingData(meetingId)
+  const schedules = await getMeetingSchedules(meetingId)
 
   // Meeting Data를 찾을 수 없을 시 Not Found로 이동
   if (!meetingData) {
@@ -47,7 +49,11 @@ export default async function MeetingPage({
         <ShareButton meetingId={meetingId} />
       </div>
       <div className={"flex snap-x overflow-x-auto overflow-y-hidden h-full"}>
-        <SchedulesList meetingId={meetingId} />
+        <SchedulesList
+          meetingId={meetingId}
+          meetingData={meetingData}
+          schedules={schedules}
+        />
       </div>
     </div>
   )
