@@ -4,6 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline"
 
 export default function AddScheduleBar() {
   const [, setSchedulePage] = useAtom(schedulePageState)
+
   return (
     <div
       className={
@@ -19,7 +20,7 @@ export default function AddScheduleBar() {
         <ChevronLeftIcon className={"size-6"} />
       </button>
       <button className={"bg-sky-500 text-white p-2 rounded-xl w-1/3"}>
-        스케줄 추가
+        확인
       </button>
       <button
         className={
