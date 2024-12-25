@@ -1,3 +1,5 @@
+"use client"
+
 import { redirect } from "next/navigation"
 import { updateMeetingTitle } from "@/app/meetings/[meetingId]/actions"
 import MeetingTitle from "@/app/meetings/[meetingId]/meeting-title"
