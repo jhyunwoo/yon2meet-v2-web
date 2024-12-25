@@ -8,4 +8,11 @@ const navigationModeState = atom((get) => {
   return start && end ? "creatMeeting" : "default"
 })
 
-export { meetingEndState, meetingStartState, navigationModeState }
+const schedulePageState = atom<number>(0)
+
+export {
+  meetingEndState,
+  meetingStartState,
+  navigationModeState,
+  schedulePageState,
+}

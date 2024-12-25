@@ -12,7 +12,7 @@ export default function DefaultBar() {
   return (
     <div
       className={
-        "bg-neutral-50 backdrop-blur-sm rounded-2xl shadow-2xl p-3 flex justify-around items-center gap-2"
+        "bg-neutral-50 rounded-2xl shadow-2xl p-3 flex justify-around items-center gap-2"
       }
     >
       <NavigationButton href={"/"} path={path}>

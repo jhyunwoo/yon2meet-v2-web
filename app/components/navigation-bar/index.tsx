@@ -4,14 +4,23 @@ import { useAtom } from "jotai"
 import { navigationModeState } from "@/lib/states"
 import DefaultBar from "@/app/components/navigation-bar/default-bar"
 import CreateMeetingBar from "@/app/components/navigation-bar/create-meeting-bar"
+import { usePathname } from "next/navigation"
+import AddScheduleBar from "@/app/components/navigation-bar/add-schedule-bar"
 
 export default function NavigationBar() {
+  const path = usePathname()
   const [state] = useAtom(navigationModeState)
 
   return (
     <div className={"fixed bottom-0 left-0 w-screen p-2 transition-all"}>
-      {state === "default" && <DefaultBar />}
-      {state === "creatMeeting" && <CreateMeetingBar />}
+      {path.includes("/schedule") ? (
+        <AddScheduleBar />
+      ) : (
+        <>
+          {state === "default" && <DefaultBar />}
+          {state === "creatMeeting" && <CreateMeetingBar />}
+        </>
+      )}
     </div>
   )
 }

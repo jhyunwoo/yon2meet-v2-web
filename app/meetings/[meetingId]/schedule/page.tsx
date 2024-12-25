@@ -1,6 +1,6 @@
-import DragToSelect from "@/app/components/drag-to-select"
 import getMeetingData from "@/lib/get-metting-data"
 import createWeek from "@/lib/create-week"
+import SelectSchedule from "@/app/meetings/[meetingId]/schedule/select-schedule"
 
 export default async function SchedulePage({
   params,
@@ -12,7 +12,7 @@ export default async function SchedulePage({
   const weekDataList = createWeek(meetingData.startDate, meetingData.endDate)
 
   return (
-    <div className={"w-screen min-h-screen flex flex-col pb-20 p-4"}>
+    <div className={"w-screen h-screen flex flex-col pb-20 p-4"}>
       <div
         className={
           "w-full grid grid-cols-2 gap-2 bg-white rounded-xl p-2 px-4 text-sm justify-items-start"
@@ -27,17 +27,7 @@ export default async function SchedulePage({
           <p>조정 가능한 시간</p>
         </div>
       </div>
-      <div
-        className={
-          "flex snap-x overflow-x-auto overflow-y-hidden h-[90vh] w-full"
-        }
-      >
-        <div className={"whitespace-nowrap flex gap-4 px-4 h-full"}>
-          {weekDataList.map((week, i) => (
-            <DragToSelect key={i} dayList={week} />
-          ))}
-        </div>
-      </div>
+      <SelectSchedule weekDateList={weekDataList} />
     </div>
   )
 }
