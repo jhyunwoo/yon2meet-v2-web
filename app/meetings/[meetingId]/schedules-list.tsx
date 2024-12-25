@@ -2,6 +2,7 @@
 
 import WeekSchedule from "@/app/meetings/[meetingId]/week-schedule"
 import createWeek from "@/lib/create-week"
+import { ScheduleType } from "@/lib/get-meeting-schedules"
 
 export default function SchedulesList({
   meetingData,
@@ -9,12 +10,7 @@ export default function SchedulesList({
 }: {
   meetingId: string
   meetingData: { id: string; title: string; startDate: Date; endDate: Date }
-  schedules: {
-    userId: string
-    userName: string
-    type: "never" | "modifiable"
-    date: Date
-  }[]
+  schedules: ScheduleType[]
 }) {
   const weekDataList = createWeek(meetingData.startDate, meetingData.endDate)
 

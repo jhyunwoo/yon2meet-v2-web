@@ -4,6 +4,7 @@ import { addScheduleAction } from "@/app/components/navigation-bar/add-schedule-
 import { useFormStatus } from "react-dom"
 import { useAtom } from "jotai"
 import { modifiableState, neverState } from "@/lib/states"
+import { useParams } from "next/navigation"
 
 function AddScheduleButton() {
   const { pending } = useFormStatus()
@@ -20,15 +21,15 @@ function AddScheduleButton() {
 export default function AddScheduleForm() {
   const [never] = useAtom(neverState)
   const [modifiable] = useAtom(modifiableState)
+  const params = useParams<{ meetingId: string }>()
 
-  const addScheduleWithNever = addScheduleAction.bind(null, Array.from(never))
-  const addScheduleWithModifiable = addScheduleWithNever.bind(
-    null,
-    Array.from(modifiable)
-  )
+  const addScheduleWithData = addScheduleAction
+    .bind(null, params.meetingId)
+    .bind(null, Array.from(never))
+    .bind(null, Array.from(modifiable))
 
   return (
-    <form action={addScheduleWithModifiable} className={"w-1/3"}>
+    <form action={addScheduleWithData} className={"w-1/3"}>
       <AddScheduleButton />
     </form>
   )

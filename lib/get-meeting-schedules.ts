@@ -33,12 +33,7 @@ export default async function getMeetingSchedules(meetingId: string) {
     },
   })
 
-  const schedules: {
-    userId: string
-    userName: string
-    type: "never" | "modifiable"
-    date: Date
-  }[] = []
+  const schedules: ScheduleType[] = []
 
   if (!meetingSchedules) {
     return []
@@ -49,14 +44,12 @@ export default async function getMeetingSchedules(meetingId: string) {
       const userData = user.user
 
       for (const schedule of userData.schedules) {
-        if (schedule.type === "never") {
-          schedules.push({
-            userId: userData.id,
-            userName: userData.name!,
-            type: schedule.type,
-            date: schedule.date,
-          })
-        }
+        schedules.push({
+          userId: userData.id,
+          userName: userData.name!,
+          type: schedule.type,
+          date: schedule.date,
+        })
       }
     }
   }
