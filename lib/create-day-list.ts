@@ -21,6 +21,5 @@ export default function createDayList(startDate: Date, endDate: Date) {
   for (let i = 0; i < 6 - endDate.getDay(); i++) {
     dayList.push({ date: addDays(endDate, i + 1), isAvailable: false })
   }
-  console.log(dayList)
   return dayList
 }
