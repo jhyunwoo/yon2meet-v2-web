@@ -18,9 +18,9 @@ export default function WeekSchedule({
 
   for (let i = 0; i < scheduleList.length; i++) {
     if (scheduleList[i].type === "never") {
-      never.push(scheduleList[i].date.toDateString())
+      never.push(scheduleList[i].date.toJSON())
     } else {
-      modifiable.push(scheduleList[i].date.toDateString())
+      modifiable.push(scheduleList[i].date.toJSON())
     }
   }
 
@@ -45,9 +45,9 @@ export default function WeekSchedule({
         <div
           key={i}
           className={`w-full h-full text-xs transition-all flex justify-center items-center border-[1px] ${
-            never.includes(date.toDateString())
+            never.includes(date.toJSON())
               ? "never-time"
-              : modifiable.includes(date.toDateString())
+              : modifiable.includes(date.toJSON())
                 ? "modifiable-time"
                 : dayList[date.getDay()].isAvailable
                   ? "bg-white text-neutral-700 border-neutral-200"

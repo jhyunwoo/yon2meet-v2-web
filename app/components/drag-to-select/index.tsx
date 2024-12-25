@@ -1,20 +1,22 @@
 "use client"
 
-import React, { useState, useRef } from "react"
+import { useRef } from "react"
 import useDragToSelect from "@/lib/use-drag-to-select"
 import getKorDay from "@/lib/get-kor-day"
 import fixStringLength from "@/lib/fix-string-length"
 import timeList from "@/app/components/drag-to-select/time-list"
 import { DayListType } from "@/lib/create-day-list"
 import createDateList from "@/app/components/drag-to-select/create-date-list"
+import { useAtom } from "jotai"
+import { modifiableState, neverState } from "@/lib/states"
 
 const NUM_ROWS = timeList.length
 const NUM_COLS = 7
 
 export default function DragToSelect({ dayList }: { dayList: DayListType[] }) {
   // State to store selected box indices
-  const [never, setNever] = useState<Set<number>>(new Set())
-  const [modifiable, setModifiable] = useState<Set<number>>(new Set())
+  const [never, setNever] = useAtom(neverState)
+  const [modifiable, setModifiable] = useAtom(modifiableState)
 
   const dateList: Date[] = createDateList(dayList)
 
@@ -29,6 +31,7 @@ export default function DragToSelect({ dayList }: { dayList: DayListType[] }) {
     gridRef,
     NUM_COLS,
     NUM_ROWS,
+    dateList,
   })
 
   // Render all boxes in the grid
@@ -40,9 +43,9 @@ export default function DragToSelect({ dayList }: { dayList: DayListType[] }) {
           key={i}
           className={`w-full h-full text-xs transition-all flex justify-center items-center border-[1px] ${
             dayList[dateList[i].getDay()].isAvailable
-              ? never.has(i)
+              ? never.has(dateList[i].toJSON())
                 ? "never-time"
-                : modifiable.has(i)
+                : modifiable.has(dateList[i].toJSON())
                   ? "modifiable-time"
                   : ""
               : "disabled-time"

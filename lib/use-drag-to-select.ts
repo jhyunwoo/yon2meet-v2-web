@@ -1,11 +1,4 @@
-import {
-  Dispatch,
-  SetStateAction,
-  useCallback,
-  RefObject,
-  useEffect,
-  useRef,
-} from "react"
+import { Dispatch, SetStateAction, RefObject, useEffect, useRef } from "react"
 
 export default function useDragToSelect({
   never,
@@ -15,14 +8,16 @@ export default function useDragToSelect({
   gridRef,
   NUM_COLS,
   NUM_ROWS,
+  dateList,
 }: {
-  never: Set<number>
-  setNever: Dispatch<SetStateAction<Set<number>>>
-  modifiable: Set<number>
-  setModifiable: Dispatch<SetStateAction<Set<number>>>
+  never: Set<string>
+  setNever: Dispatch<SetStateAction<Set<string>>>
+  modifiable: Set<string>
+  setModifiable: Dispatch<SetStateAction<Set<string>>>
   gridRef: RefObject<HTMLDivElement | null>
   NUM_COLS: number
   NUM_ROWS: number
+  dateList: Date[]
 }) {
   const dragMode = useRef<"never" | "modifiable" | "remove">("never")
   const isDragging = useRef<boolean>(false)
@@ -37,10 +32,10 @@ export default function useDragToSelect({
 
     if (boxIndex !== null) {
       // Determine drag mode based on initial box state
-      if (never.has(boxIndex)) {
+      if (never.has(dateList[boxIndex].toJSON())) {
         dragMode.current = "modifiable"
         addModifiable(boxIndex)
-      } else if (modifiable.has(boxIndex)) {
+      } else if (modifiable.has(dateList[boxIndex].toJSON())) {
         dragMode.current = "remove"
         removeModifiable(boxIndex)
       } else {
@@ -51,7 +46,7 @@ export default function useDragToSelect({
   }
 
   // Handler for dragging over boxes
-  const handleTouchMove = useCallback((e: TouchEvent) => {
+  const handleTouchMove = (e: TouchEvent) => {
     if (!isDragging.current) return
     const touch = e.touches[0]
     const boxIndex = getBoxIndex(touch.clientX, touch.clientY)
@@ -65,12 +60,12 @@ export default function useDragToSelect({
         addModifiable(boxIndex)
       }
     }
-  }, [])
+  }
 
   // Handler to end dragging
-  const handleTouchEnd = useCallback(() => {
+  const handleTouchEnd = () => {
     isDragging.current = false
-  }, [])
+  }
 
   // Calculate box index based on touch coordinates
   const getBoxIndex = (clientX: number, clientY: number): number | null => {
@@ -96,30 +91,30 @@ export default function useDragToSelect({
   // Add a box to the selection
   const addNever = (index: number) => {
     setNever((prev) => {
-      if (prev.has(index)) {
+      if (prev.has(dateList[index].toJSON())) {
         return prev
       }
       const newSelected = new Set(prev)
-      newSelected.add(index)
+      newSelected.add(dateList[index].toJSON())
       return newSelected
     })
   }
 
   const addModifiable = (index: number) => {
     setNever((prev) => {
-      if (!prev.has(index)) {
+      if (!prev.has(dateList[index].toJSON())) {
         return prev
       }
       const newSelected = new Set(prev)
-      newSelected.delete(index)
+      newSelected.delete(dateList[index].toJSON())
       return newSelected
     })
     setModifiable((prev) => {
-      if (prev.has(index)) {
+      if (prev.has(dateList[index].toJSON())) {
         return prev
       }
       const newSelected = new Set(prev)
-      newSelected.add(index)
+      newSelected.add(dateList[index].toJSON())
       return newSelected
     })
   }
@@ -127,11 +122,11 @@ export default function useDragToSelect({
   // Remove a box from the selection
   const removeModifiable = (index: number) => {
     setModifiable((prev) => {
-      if (!prev.has(index)) {
+      if (!prev.has(dateList[index].toJSON())) {
         return prev
       }
       const newSelected = new Set(prev)
-      newSelected.delete(index)
+      newSelected.delete(dateList[index].toJSON())
       return newSelected
     })
   }

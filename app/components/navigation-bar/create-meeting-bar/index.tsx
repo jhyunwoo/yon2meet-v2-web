@@ -14,8 +14,8 @@ export default function CreateMeetingBar() {
   const { status } = useSession()
 
   const formData = new FormData()
-  formData.set("start", start?.toDateString()!)
-  formData.set("end", end?.toDateString()!)
+  formData.set("start", start?.toJSON()!)
+  formData.set("end", end?.toJSON()!)
   const createMeetingWithFormData = createMeeting.bind(null, formData)
 
   return (

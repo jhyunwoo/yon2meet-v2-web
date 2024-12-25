@@ -22,9 +22,9 @@ export default function SetStartEndParams() {
   useEffect(() => {
     let params = "/"
     if (start && end) {
-      params = `/?start=${start.toDateString()}&end=${end.toDateString()}`
+      params = `/?start=${start.toJSON()}&end=${end.toJSON()}`
     } else if (start) {
-      params = `/?start=${start.toDateString()}`
+      params = `/?start=${start.toJSON()}`
     }
     router.replace(params)
   }, [start, end])

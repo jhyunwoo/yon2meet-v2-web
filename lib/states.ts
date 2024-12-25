@@ -10,9 +10,14 @@ const navigationModeState = atom((get) => {
 
 const schedulePageState = atom<number>(0)
 
+const neverState = atom<Set<string>>(new Set<string>())
+const modifiableState = atom<Set<string>>(new Set<string>())
+
 export {
   meetingEndState,
   meetingStartState,
   navigationModeState,
   schedulePageState,
+  neverState,
+  modifiableState,
 }
