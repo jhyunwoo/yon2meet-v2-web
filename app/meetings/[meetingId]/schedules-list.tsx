@@ -1,26 +1,14 @@
 import getMeetingSchedules from "@/lib/get-meeting-schedules"
-import db from "@/db"
-import { meetings } from "@/db/schema/meetings"
-import { eq } from "drizzle-orm"
 import WeekSchedule from "@/app/meetings/[meetingId]/week-schedule"
 import createWeek from "@/lib/create-week"
+import getMeetingData from "@/lib/get-metting-data"
 
 export default async function SchedulesList({
   meetingId,
 }: {
   meetingId: string
 }) {
-  const meetingData = (
-    await db
-      .select({
-        startDate: meetings.startDate,
-        endDate: meetings.endDate,
-        title: meetings.title,
-      })
-      .from(meetings)
-      .where(eq(meetings.id, meetingId))
-      .limit(1)
-  )[0]
+  const meetingData = await getMeetingData(meetingId)
 
   const schedules = await getMeetingSchedules(meetingId)
 

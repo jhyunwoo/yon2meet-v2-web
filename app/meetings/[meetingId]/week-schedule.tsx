@@ -46,12 +46,12 @@ export default function WeekSchedule({
           key={i}
           className={`w-full h-full text-xs transition-all flex justify-center items-center border-[1px] ${
             never.includes(date.toDateString())
-              ? "bg-green-500 text-white border-green-500"
+              ? "never-time"
               : modifiable.includes(date.toDateString())
-                ? "bg-green-800 text-white border-green-800"
+                ? "modifiable-time"
                 : dayList[date.getDay()].isAvailable
                   ? "bg-white text-neutral-700 border-neutral-200"
-                  : "bg-neutral-300 border-neutral-300 text-neutral-400"
+                  : "disabled-time"
           }
           `}
         >
