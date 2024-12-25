@@ -3,7 +3,7 @@
 import WeekSchedule from "@/app/meetings/[meetingId]/week-schedule"
 import createWeek from "@/lib/create-week"
 
-export default async function SchedulesList({
+export default function SchedulesList({
   meetingData,
   schedules,
 }: {
