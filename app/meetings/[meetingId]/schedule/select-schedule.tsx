@@ -1,7 +1,7 @@
 "use client"
 
 import DragToSelect from "@/app/components/drag-to-select"
-import { modifiableState, neverState, schedulePageState } from "@/lib/states"
+import { schedulePageState } from "@/lib/states"
 import { useAtom } from "jotai"
 import { DayListType } from "@/lib/create-day-list"
 import { useEffect, useState } from "react"
@@ -14,9 +14,6 @@ export default function SelectSchedule({
   const [schedulePage, setSchedulePage] = useAtom(schedulePageState)
   const [maxPage, setMaxPage] = useState(0)
   const [page, setPage] = useState(0)
-  const [never] = useAtom(neverState)
-  const [modifiable] = useAtom(modifiableState)
-  console.log(never, modifiable)
 
   useEffect(() => {
     setMaxPage(weekDateList.length - 1)

@@ -1,8 +1,6 @@
 import { DayListType } from "@/lib/create-day-list"
 import { ScheduleType } from "@/lib/get-meeting-schedules"
 import createDateList from "@/app/components/drag-to-select/create-date-list"
-import getKorDay from "@/lib/get-kor-day"
-import fixStringLength from "@/lib/fix-string-length"
 
 export default function WeekSchedule({
   dayList,
@@ -36,9 +34,16 @@ export default function WeekSchedule({
           className={`text-center text-xs flex flex-col items-center justify-center ${i == 0 && "text-red-500"}  ${i == 6 && "text-blue-500"}`}
         >
           <p>
-            {day.date.getMonth() + 1}/{day.date.getDate()}
+            {Intl.DateTimeFormat("ko-KR", {
+              day: "numeric",
+              month: "numeric",
+            }).format(day.date)}
           </p>
-          <p>{getKorDay(day.date.getDay())}</p>
+          <p>
+            {Intl.DateTimeFormat("ko-KR", {
+              weekday: "short",
+            }).format(day.date)}
+          </p>
         </div>
       ))}
       {dateList.map((date, i) => (
@@ -55,8 +60,11 @@ export default function WeekSchedule({
           }
           `}
         >
-          {fixStringLength(String(date.getHours()), 2, "0")}:
-          {fixStringLength(String(date.getMinutes()), 2, "0")}
+          {Intl.DateTimeFormat("ko-KR", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: false,
+          }).format(date)}
         </div>
       ))}
     </div>

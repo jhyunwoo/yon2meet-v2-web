@@ -2,8 +2,6 @@
 
 import { useRef } from "react"
 import useDragToSelect from "@/lib/use-drag-to-select"
-import getKorDay from "@/lib/get-kor-day"
-import fixStringLength from "@/lib/fix-string-length"
 import timeList from "@/app/components/drag-to-select/time-list"
 import { DayListType } from "@/lib/create-day-list"
 import createDateList from "@/app/components/drag-to-select/create-date-list"
@@ -51,8 +49,11 @@ export default function DragToSelect({ dayList }: { dayList: DayListType[] }) {
               : "disabled-time"
           }`}
         >
-          {fixStringLength(String(dateList[i].getHours()), 2, "0")}:
-          {fixStringLength(String(dateList[i].getMinutes()), 2, "0")}
+          {Intl.DateTimeFormat("ko-KR", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: false,
+          }).format(dateList[i])}
         </div>
       )
     }
@@ -70,9 +71,16 @@ export default function DragToSelect({ dayList }: { dayList: DayListType[] }) {
           className={`text-center text-xs flex flex-col items-center justify-center ${i == 0 && "text-red-500"}  ${i == 6 && "text-blue-500"}`}
         >
           <p>
-            {day.date.getMonth() + 1}/{day.date.getDate()}
+            {Intl.DateTimeFormat("ko-KR", {
+              day: "numeric",
+              month: "numeric",
+            }).format(day.date)}
           </p>
-          <p>{getKorDay(day.date.getDay())}</p>
+          <p>
+            {Intl.DateTimeFormat("ko-KR", {
+              weekday: "short",
+            }).format(day.date)}
+          </p>
         </div>
       ))}
       {renderBoxes()}
