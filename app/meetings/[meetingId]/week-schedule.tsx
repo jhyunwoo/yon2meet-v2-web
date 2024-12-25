@@ -14,8 +14,6 @@ export default function WeekSchedule({
   const never: string[] = []
   const modifiable: string[] = []
 
-  console.log(scheduleList)
-
   for (let i = 0; i < scheduleList.length; i++) {
     if (scheduleList[i].type === "never") {
       never.push(scheduleList[i].date.toJSON())
@@ -23,8 +21,6 @@ export default function WeekSchedule({
       modifiable.push(scheduleList[i].date.toJSON())
     }
   }
-
-  console.log(never, modifiable)
 
   return (
     <div

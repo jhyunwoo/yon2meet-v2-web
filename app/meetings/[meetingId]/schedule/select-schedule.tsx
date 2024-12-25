@@ -1,21 +1,26 @@
 "use client"
 
 import DragToSelect from "@/app/components/drag-to-select"
-import { schedulePageState } from "@/lib/states"
+import { modifiableState, neverState, schedulePageState } from "@/lib/states"
 import { useAtom } from "jotai"
 import { useEffect, useState } from "react"
 import createWeek from "@/lib/create-week"
+import { ScheduleType } from "@/lib/get-meeting-schedules"
 
 export default function SelectSchedule({
   startDate,
   endDate,
+  schedules,
 }: {
   startDate: Date
   endDate: Date
+  schedules: ScheduleType[]
 }) {
   const [schedulePage, setSchedulePage] = useAtom(schedulePageState)
   const [maxPage, setMaxPage] = useState(0)
   const [page, setPage] = useState(0)
+  const [, setNever] = useAtom(neverState)
+  const [, setModifiable] = useAtom(modifiableState)
 
   const weekDateList = createWeek(startDate, endDate)
 
@@ -34,6 +39,20 @@ export default function SelectSchedule({
       setPage(schedulePage)
     }
   }, [maxPage, schedulePage])
+
+  useEffect(() => {
+    const neverList = new Set<string>()
+    const modifiableList = new Set<string>()
+    for (const schedule of schedules) {
+      if (schedule.type === "never") {
+        neverList.add(schedule.date.toJSON())
+      } else {
+        modifiableList.add(schedule.date.toJSON())
+      }
+      setNever(neverList)
+      setModifiable(modifiableList)
+    }
+  }, [schedules])
 
   return (
     <div className={"w-full h-full flex"}>

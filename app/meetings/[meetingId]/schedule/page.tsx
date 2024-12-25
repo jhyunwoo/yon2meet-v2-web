@@ -1,5 +1,6 @@
 import getMeetingData from "@/lib/get-metting-data"
 import SelectSchedule from "@/app/meetings/[meetingId]/schedule/select-schedule"
+import getMeetingSchedules from "@/lib/get-meeting-schedules"
 
 export default async function SchedulePage({
   params,
@@ -8,6 +9,7 @@ export default async function SchedulePage({
 }) {
   const { meetingId } = await params
   const meetingData = await getMeetingData(meetingId)
+  const schedules = await getMeetingSchedules(meetingId)
 
   return (
     <div className={"w-screen h-screen flex flex-col pb-20 p-2"}>
@@ -28,6 +30,7 @@ export default async function SchedulePage({
       <SelectSchedule
         startDate={meetingData.startDate}
         endDate={meetingData.endDate}
+        schedules={schedules}
       />
     </div>
   )
