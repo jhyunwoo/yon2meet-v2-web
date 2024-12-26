@@ -22,6 +22,12 @@ export default function WeekSchedule({
     }
   }
 
+  for (const neverSchedule of never) {
+    if (modifiable.includes(neverSchedule)) {
+      modifiable.splice(modifiable.indexOf(neverSchedule), 1)
+    }
+  }
+
   return (
     <div
       className={
@@ -50,13 +56,13 @@ export default function WeekSchedule({
         <div
           key={i}
           className={`w-full h-full text-xs transition-all flex justify-center items-center border-[1px] ${
-            never.includes(date.toJSON())
-              ? "never-time"
-              : modifiable.includes(date.toJSON())
-                ? "modifiable-time"
-                : dayList[date.getDay()].isAvailable
-                  ? "bg-white text-neutral-700 border-neutral-200"
-                  : "disabled-time"
+            dayList[dateList[i].getDay()].isAvailable
+              ? never.includes(dateList[i].toJSON())
+                ? "never-time"
+                : modifiable.includes(dateList[i].toJSON())
+                  ? "modifiable-time"
+                  : "text-neutral-600"
+              : "disabled-time"
           }
           `}
         >

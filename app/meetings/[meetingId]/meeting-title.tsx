@@ -2,9 +2,18 @@
 
 import { useFormStatus } from "react-dom"
 import LoadingSpinner from "@/app/components/loading-spinner"
+import { meetingTitleState } from "@/lib/states"
+import { useAtom } from "jotai"
+import { useEffect } from "react"
 
 export default function MeetingTitle({ title }: { title: string }) {
   const { pending } = useFormStatus()
+  const [, setMeetingTitle] = useAtom(meetingTitleState)
+
+  useEffect(() => {
+    setMeetingTitle(title)
+  }, [title])
+
   return (
     <>
       <input
@@ -16,6 +25,7 @@ export default function MeetingTitle({ title }: { title: string }) {
         className={
           "p-1 px-2 rounded-xl focus:outline-0 selection:text-sky-400 ring-2 focus:ring-offset-1 focus:ring-sky-700 ring-sky-500 disabled:bg-sky-100 transition-all bg-neutral-100 text-xl font-bold w-full"
         }
+        onChange={(e) => setMeetingTitle(e.target.value)}
       />
       <button
         disabled={pending}

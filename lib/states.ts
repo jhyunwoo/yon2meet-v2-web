@@ -13,6 +13,8 @@ const schedulePageState = atom<number>(0)
 const neverState = atom<Set<string>>(new Set<string>())
 const modifiableState = atom<Set<string>>(new Set<string>())
 
+const meetingTitleState = atom<string>("")
+
 export {
   meetingEndState,
   meetingStartState,
@@ -20,4 +22,5 @@ export {
   schedulePageState,
   neverState,
   modifiableState,
+  meetingTitleState,
 }

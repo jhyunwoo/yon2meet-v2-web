@@ -26,19 +26,13 @@ export default function CreateMeetingBar() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           action={createMeetingWithFormData}
-          className={
-            "bg-neutral-50 backdrop-blur-sm rounded-2xl shadow-2xl p-3 flex justify-around items-center gap-2"
-          }
+          className={"bar-layout"}
         >
           <ResetDateButton />
           <CreateMeetingButton />
         </motion.form>
       ) : (
-        <div
-          className={
-            "bg-neutral-50 backdrop-blur-sm rounded-2xl shadow-2xl p-3 flex justify-around items-center gap-2"
-          }
-        >
+        <div className={"bar-layout"}>
           <SignInWithKakao redirect={"/"} />
         </div>
       )}

@@ -3,9 +3,9 @@
 import db from "@/db"
 import { schedules } from "@/db/schema/schedules"
 import { auth } from "@/auth"
-import { meetings } from "@/db/schema/meetings"
 import { and, eq, inArray } from "drizzle-orm"
 import { redirect } from "next/navigation"
+import getMeetingData from "@/lib/get-metting-data"
 
 export async function addScheduleAction(
   meetingId: string,
@@ -32,20 +32,14 @@ export async function addScheduleAction(
       )
     )
 
-  const meetingData = (
-    await db
-      .select({ startDate: meetings.startDate, endDate: meetings.endDate })
-      .from(meetings)
-      .where(eq(meetings.id, meetingId))
-      .limit(1)
-  )[0]
+  const meetingData = await getMeetingData(meetingId)
 
   const neverData: (typeof schedules.$inferInsert)[] = []
   const modifiableData: (typeof schedules.$inferInsert)[] = []
 
   for (const data of never) {
     const date = new Date(data)
-    if (date >= meetingData.startDate || date <= meetingData.endDate) {
+    if (date >= meetingData.startDate && date <= meetingData.endDate) {
       neverData.push({
         userId: session.user.id,
         date: new Date(data),

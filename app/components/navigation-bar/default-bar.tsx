@@ -10,19 +10,18 @@ export default function DefaultBar() {
   const path = usePathname()
 
   return (
-    <div
-      className={
-        "bg-neutral-50 rounded-2xl shadow-2xl p-3 flex justify-around items-center gap-2"
-      }
-    >
+    <div className={"bar-layout"}>
       <NavigationButton href={"/"} path={path}>
         <SquaresPlusIcon className={"size-7"} />
+        <p className={"text-xs"}>새로운 미팅</p>
       </NavigationButton>
       <NavigationButton href={"/meetings"} path={path}>
         <ListBulletIcon className={"size-7"} />
+        <p className={"text-xs"}>미팅 기록</p>
       </NavigationButton>
       <NavigationButton href={"/profile"} path={path}>
         <UserCircleIcon className={"size-7"} />
+        <p className={"text-xs"}>프로필</p>
       </NavigationButton>
     </div>
   )

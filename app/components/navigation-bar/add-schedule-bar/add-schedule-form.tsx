@@ -5,15 +5,24 @@ import { useFormStatus } from "react-dom"
 import { useAtom } from "jotai"
 import { modifiableState, neverState } from "@/lib/states"
 import { useParams } from "next/navigation"
+import LoadingSpinner from "@/app/components/loading-spinner"
 
 function AddScheduleButton() {
   const { pending } = useFormStatus()
   return (
     <button
-      className={"bg-sky-500 text-white p-2 rounded-xl w-full"}
+      className={
+        "bg-sky-500 disabled:bg-sky-600 transition-all text-white p-2 rounded-xl w-full flex items-center justify-center"
+      }
       disabled={pending}
     >
-      확인
+      {pending ? (
+        <LoadingSpinner
+          className={"size-6 border-2 border-t-sky-200 border-neutral-300/50"}
+        />
+      ) : (
+        "확인"
+      )}
     </button>
   )
 }

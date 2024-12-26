@@ -6,11 +6,7 @@ import AddScheduleForm from "@/app/components/navigation-bar/add-schedule-bar/ad
 
 export default function AddScheduleBar() {
   return (
-    <div
-      className={
-        "bg-neutral-50 rounded-2xl shadow-2xl p-3 flex justify-around items-center gap-2"
-      }
-    >
+    <div className={"bar-layout"}>
       <PageControlButton add={-1}>
         <ChevronLeftIcon className={"size-6"} />
       </PageControlButton>
