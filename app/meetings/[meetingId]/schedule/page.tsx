@@ -12,7 +12,7 @@ export default async function SchedulePage({
   const schedules = await getMeetingSchedules(meetingId)
 
   return (
-    <div className={"w-screen h-screen flex flex-col pb-20 p-2"}>
+    <div className={"w-screen h-screen flex flex-col pb-24 p-2"}>
       <div
         className={
           "w-full grid grid-cols-2 gap-2 bg-white rounded-xl p-2 px-4 text-sm justify-items-start"
