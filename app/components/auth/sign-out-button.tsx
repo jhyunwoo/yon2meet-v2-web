@@ -12,7 +12,7 @@ export default function SignOutButton() {
         signOut().then(() => setLoading(false))
       }}
       className={
-        "bg-sky-600 p-2 text-lg font-semibold rounded-xl text-center text-white w-full disabled:bg-sky-700 transition-all"
+        "p-1 text-sm font-semibold rounded-lg text-center ring-2 ring-sky-600 w-full disabled:bg-sky-50 transition-all"
       }
       disabled={loading}
     >

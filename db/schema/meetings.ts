@@ -7,6 +7,9 @@ export const meetings = pgTable("meeting", {
   title: text("meeting").notNull().default("새로운 미팅"),
   startDate: timestamp("startDate", { withTimezone: true }).notNull(),
   endDate: timestamp("endDate", { withTimezone: true }).notNull(),
+  createdAt: timestamp("createdAt", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
 })
 
 export const meetingsRelations = relations(meetings, ({ many }) => ({

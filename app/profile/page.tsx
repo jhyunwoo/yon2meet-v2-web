@@ -18,11 +18,12 @@ export default async function ProfilePage() {
   }
 
   return (
-    <DefaultLayout>
+    <div className={"w-screen min-h-screen flex flex-col pb-24 pt-16 p-4"}>
       <Header>프로필</Header>
-      <div className={"w-full p-4"}>
+      <div className={"p-4 rounded-xl bg-white "}>
+        <div className={"text-xl font-semibold"}>{session?.user?.name}</div>
         <SignOutButton />
       </div>
-    </DefaultLayout>
+    </div>
   )
 }
