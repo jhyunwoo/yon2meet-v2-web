@@ -26,7 +26,7 @@ export default function SetStartEndParams() {
     } else if (start) {
       params = `/?start=${start.toJSON()}`
     }
-    router.replace(params)
+    router.replace(params, { scroll: false })
   }, [start, end])
 
   return <></>

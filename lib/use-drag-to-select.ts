@@ -73,6 +73,7 @@ export default function useDragToSelect({
     if (!grid) return null
 
     const rect = grid.getBoundingClientRect()
+    console.log(clientX, clientY)
     const x = clientX - rect.left
     const y = clientY - rect.top
 
