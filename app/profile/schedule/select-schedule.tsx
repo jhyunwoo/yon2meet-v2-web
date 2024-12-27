@@ -6,14 +6,11 @@ import { useAtom } from "jotai"
 import { useEffect, useState } from "react"
 import createWeek from "@/lib/create-week"
 import { ScheduleType } from "@/lib/get-meeting-schedules"
+import { addYears } from "date-fns"
 
 export default function SelectSchedule({
-  startDate,
-  endDate,
   schedules,
 }: {
-  startDate: Date
-  endDate: Date
   schedules: ScheduleType[]
 }) {
   const [schedulePage, setSchedulePage] = useAtom(schedulePageState)
@@ -21,6 +18,14 @@ export default function SelectSchedule({
   const [page, setPage] = useState(0)
   const [, setNever] = useAtom(neverState)
   const [, setModifiable] = useAtom(modifiableState)
+
+  const today = new Date()
+  const startDate = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate()
+  )
+  const endDate = addYears(startDate, 1)
 
   const weekDateList = createWeek(startDate, endDate)
 

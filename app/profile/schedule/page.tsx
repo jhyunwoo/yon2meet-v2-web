@@ -1,7 +1,7 @@
-import SelectSchedule from "@/app/meetings/[meetingId]/schedule/select-schedule"
 import getUserSchedule from "@/lib/get-user-schedule"
 import { auth } from "@/auth"
 import { redirect } from "next/navigation"
+import SelectSchedule from "@/app/profile/schedule/select-schedule"
 
 export default async function SchedulePage() {
   const session = await auth()
@@ -25,11 +25,7 @@ export default async function SchedulePage() {
           <p>조정 가능한 시간</p>
         </div>
       </div>
-      <SelectSchedule
-        startDate={new Date(2024, 11, 1)}
-        endDate={new Date(2025, 11, 31)}
-        schedules={schedules}
-      />
+      <SelectSchedule schedules={schedules} />
     </div>
   )
 }
