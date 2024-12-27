@@ -4,7 +4,7 @@ import NavigationButton from "@/app/components/navigation-bar/navigation-button"
 import ShareButton from "@/app/components/navigation-bar/share-button"
 import {
   CalendarDateRangeIcon,
-  ListBulletIcon,
+  ChevronLeftIcon,
 } from "@heroicons/react/24/outline"
 import Link from "next/link"
 import { useParams, usePathname } from "next/navigation"
@@ -16,7 +16,7 @@ export default function MeetingBar() {
   return (
     <div className={"bar-layout"}>
       <NavigationButton href={"/meetings"} path={path}>
-        <ListBulletIcon className={"size-7"} />
+        <ChevronLeftIcon className={"size-7"} />
         <p className={"text-xs"}>미팅 기록</p>
       </NavigationButton>
       <Link

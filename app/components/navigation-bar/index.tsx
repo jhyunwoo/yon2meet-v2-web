@@ -7,6 +7,7 @@ import CreateMeetingBar from "@/app/components/navigation-bar/create-meeting-bar
 import { useParams, usePathname } from "next/navigation"
 import AddScheduleBar from "@/app/components/navigation-bar/add-schedule-bar"
 import MeetingBar from "@/app/components/navigation-bar/meeting-bar"
+import EverytimeBar from "@/app/components/navigation-bar/everytime-bar"
 
 function BarController() {
   const path = usePathname()
@@ -17,6 +18,8 @@ function BarController() {
     return <AddScheduleBar />
   } else if (params?.meetingId) {
     return <MeetingBar />
+  } else if (path === "/everytime") {
+    return <EverytimeBar />
   } else if (state === "default") {
     return <DefaultBar />
   } else if (state === "creatMeeting") {

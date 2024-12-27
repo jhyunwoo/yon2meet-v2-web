@@ -15,6 +15,8 @@ const modifiableState = atom<Set<string>>(new Set<string>())
 
 const meetingTitleState = atom<string>("")
 
+const timetableState = atom<string>("")
+
 export {
   meetingEndState,
   meetingStartState,
@@ -23,4 +25,5 @@ export {
   neverState,
   modifiableState,
   meetingTitleState,
+  timetableState,
 }
