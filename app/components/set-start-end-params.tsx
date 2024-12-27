@@ -17,7 +17,7 @@ export default function SetStartEndParams() {
   useEffect(() => {
     setStart(startParam ? new Date(startParam) : undefined)
     setEnd(endParam ? new Date(endParam) : undefined)
-  }, [startParam, endParam])
+  }, [startParam, endParam, setStart, setEnd])
 
   useEffect(() => {
     let params = "/"
@@ -27,7 +27,7 @@ export default function SetStartEndParams() {
       params = `/?start=${start.toJSON()}`
     }
     router.replace(params, { scroll: false })
-  }, [start, end])
+  }, [start, end, router])
 
   return <></>
 }

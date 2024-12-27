@@ -12,7 +12,7 @@ export default function MeetingTitle({ title }: { title: string }) {
 
   useEffect(() => {
     setMeetingTitle(title)
-  }, [title])
+  }, [setMeetingTitle, title])
 
   return (
     <>

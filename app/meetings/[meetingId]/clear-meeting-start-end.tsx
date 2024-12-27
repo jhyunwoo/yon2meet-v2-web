@@ -11,7 +11,7 @@ export default function ClearMeetingStartEnd() {
   useEffect(() => {
     setStart(undefined)
     setEnd(undefined)
-  }, [])
+  }, [setEnd, setStart])
 
   return <></>
 }

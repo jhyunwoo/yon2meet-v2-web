@@ -1,13 +1,10 @@
-"use client"
-
 import {
   startOfMonth,
   endOfMonth,
   eachDayOfInterval,
   isSameDay,
 } from "date-fns"
-import { useAtom } from "jotai"
-import { meetingEndState, meetingStartState } from "@/lib/states"
+import { SetStateAction } from "react"
 
 function getMonthDates(year: number, month: number) {
   const startDate = startOfMonth(new Date(year, month, 1))
@@ -44,13 +41,18 @@ function CalenderHeader() {
 export default function Calendar({
   year,
   month,
+  start,
+  setStart,
+  end,
+  setEnd,
 }: {
   year: number
   month: number
+  start: Date | undefined
+  setStart: (args_0: SetStateAction<Date | undefined>) => void
+  end: Date | undefined
+  setEnd: (args_0: SetStateAction<Date | undefined>) => void
 }) {
-  const [start, setStart] = useAtom(meetingStartState)
-  const [end, setEnd] = useAtom(meetingEndState)
-
   const dates = getMonthDates(year, month)
   const emptyDates = []
   for (let i = 0; i < dates[0].getDay(); i++) {

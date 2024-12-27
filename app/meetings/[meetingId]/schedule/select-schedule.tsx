@@ -38,7 +38,7 @@ export default function SelectSchedule({
     } else {
       setPage(schedulePage)
     }
-  }, [maxPage, schedulePage])
+  }, [maxPage, schedulePage, setSchedulePage])
 
   useEffect(() => {
     const neverList = new Set<string>()
@@ -52,7 +52,7 @@ export default function SelectSchedule({
       setNever(neverList)
       setModifiable(modifiableList)
     }
-  }, [schedules])
+  }, [schedules, setModifiable, setNever])
 
   return (
     <div className={"w-full h-full flex"}>
