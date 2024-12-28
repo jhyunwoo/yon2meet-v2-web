@@ -6,7 +6,7 @@ const semesterList = [
   },
   {
     title: "2025년 1학기",
-    start: new Date(2024, 2, 4),
+    start: new Date(2025, 2, 4),
     end: new Date(2025, 5, 23),
   },
 ]
