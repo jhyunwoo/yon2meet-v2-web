@@ -5,6 +5,7 @@ import SignInWithKakao from "@/app/components/auth/sign-in-with-kakao"
 import SignOutButton from "@/app/components/auth/sign-out-button"
 import Link from "next/link"
 import { ChevronRightIcon } from "@heroicons/react/24/outline"
+import ResetStartEnd from "@/app/profile/reset-start-end"
 
 export default async function ProfilePage() {
   const session = await auth()
@@ -23,6 +24,7 @@ export default async function ProfilePage() {
     <div
       className={"w-screen min-h-screen flex flex-col gap-4 pb-24 pt-16 p-4"}
     >
+      <ResetStartEnd />
       <Header>프로필</Header>
       <div className={"p-4 rounded-xl bg-white flex flex-col gap-2"}>
         <div className={"text-xl font-semibold"}>{session?.user?.name}</div>

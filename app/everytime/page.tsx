@@ -1,7 +1,15 @@
 import Image from "next/image"
 import TimetableSemester from "@/app/everytime/timetable-semester"
+import { auth } from "@/auth"
+import { redirect } from "next/navigation"
 
-export default function EverytimePage() {
+export default async function EverytimePage() {
+  const session = await auth()
+
+  if (!session?.user?.id) {
+    redirect("/profile")
+  }
+
   return (
     <div className={"w-screen min-h-screen flex flex-col pb-24 p-4 "}>
       <div className={"text-2xl font-bold py-4"}>
