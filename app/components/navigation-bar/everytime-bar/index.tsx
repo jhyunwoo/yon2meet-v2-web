@@ -3,13 +3,14 @@ import NavigationButton from "@/app/components/navigation-bar/navigation-button"
 import { usePathname, useRouter } from "next/navigation"
 import { useRef } from "react"
 import { useAtom } from "jotai/index"
-import { timetableState } from "@/lib/states"
+import { isLoadingState, timetableState } from "@/lib/states"
 
 export default function EverytimeBar() {
   const path = usePathname()
   const inputRef = useRef<HTMLInputElement>(null)
   const [timetable] = useAtom(timetableState)
   const router = useRouter()
+  const [, setIsLoading] = useAtom(isLoadingState)
 
   function handleClick() {
     if (!timetable) return alert("학기를 선택해주세요.")
@@ -18,7 +19,7 @@ export default function EverytimeBar() {
 
   async function handleImageInput() {
     if (!inputRef?.current?.files?.[0]) return alert("Please upload a file")
-
+    setIsLoading(true)
     const formData = new FormData()
     formData.append("file", inputRef?.current?.files?.[0]) // key를 'file'로 설정
     const response = await fetch(process.env.NEXT_PUBLIC_MODEL_URL!, {
@@ -26,7 +27,6 @@ export default function EverytimeBar() {
       method: "POST",
     })
     const scheduleData = await response.json()
-    console.log(scheduleData)
 
     const postSchedules = await fetch("/api/everytime", {
       method: "POST",
@@ -38,10 +38,11 @@ export default function EverytimeBar() {
     const postResult = await postSchedules.json()
     if (postResult.message === "Success") {
       alert("시간표가 업로드되었습니다.")
-      router.replace("/")
+      router.replace("/profile/schedule")
     } else {
       alert("시간표를 업로드하는데 실패했습니다.")
     }
+    setIsLoading(false)
   }
 
   return (

@@ -17,6 +17,8 @@ const meetingTitleState = atom<string>("")
 
 const timetableState = atom<string>("")
 
+const isLoadingState = atom<boolean>(false)
+
 export {
   meetingEndState,
   meetingStartState,
@@ -26,4 +28,5 @@ export {
   modifiableState,
   meetingTitleState,
   timetableState,
+  isLoadingState,
 }

@@ -8,13 +8,15 @@ import { useParams, usePathname } from "next/navigation"
 import AddScheduleBar from "@/app/components/navigation-bar/add-schedule-bar"
 import MeetingBar from "@/app/components/navigation-bar/meeting-bar"
 import EverytimeBar from "@/app/components/navigation-bar/everytime-bar"
+import UserScheduleBar from "@/app/components/navigation-bar/user-schedule-bar"
 
 function BarController() {
   const path = usePathname()
   const [state] = useAtom(navigationModeState)
   const params = useParams()
-
-  if (path.includes("/schedule")) {
+  if (path === "/profile/schedule") {
+    return <UserScheduleBar />
+  } else if (path.includes("/schedule")) {
     return <AddScheduleBar />
   } else if (params?.meetingId) {
     return <MeetingBar />

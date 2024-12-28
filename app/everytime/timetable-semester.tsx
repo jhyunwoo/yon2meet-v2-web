@@ -2,7 +2,8 @@
 
 import semesterList from "@/lib/semester-list"
 import { useAtom } from "jotai/index"
-import { timetableState } from "@/lib/states"
+import { isLoadingState, timetableState } from "@/lib/states"
+import Loading from "@/app/everytime/loading"
 
 const timeFormat: Intl.DateTimeFormatOptions = {
   year: "numeric",
@@ -12,6 +13,7 @@ const timeFormat: Intl.DateTimeFormatOptions = {
 
 export default function TimetableSemester() {
   const [timetable, setTimetable] = useAtom(timetableState)
+  const [isLoading] = useAtom(isLoadingState)
 
   function handleClick(data: { title: string; start: Date; end: Date }) {
     if (timetable === JSON.stringify(data)) {
@@ -25,6 +27,7 @@ export default function TimetableSemester() {
     <div
       className={"flex flex-col items-center justify-center gap-2 mt-4 w-full"}
     >
+      {isLoading && <Loading />}
       {semesterList.map((data, i) => (
         <button
           key={i}
