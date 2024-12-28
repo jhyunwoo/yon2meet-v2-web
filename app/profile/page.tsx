@@ -31,7 +31,7 @@ export default async function ProfilePage() {
       <Link
         href={"/profile/schedule"}
         className={
-          "p-4 rounded-xl flex items-center justify-start gap-2 bg-sky-600 text-white"
+          "p-4 rounded-xl flex items-center justify-start gap-2 bg-sky-600 text-white font-semibold"
         }
       >
         <p>내 스케줄 확인하기</p>
