@@ -3,7 +3,7 @@
 import semesterList from "@/lib/semester-list"
 import { useAtom } from "jotai/index"
 import { isLoadingState, timetableState } from "@/lib/states"
-import Loading from "@/app/everytime/loading"
+import Loading from "@/app/loading"
 
 const timeFormat: Intl.DateTimeFormatOptions = {
   year: "numeric",
