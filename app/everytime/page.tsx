@@ -1,20 +1,13 @@
-import Header from "@/app/components/header"
 import Image from "next/image"
 import TimetableSemester from "@/app/everytime/timetable-semester"
 
 export default function EverytimePage() {
   return (
-    <div
-      className={
-        "w-screen min-h-screen flex flex-col pb-24 pt-16 p-4 items-center justify-center"
-      }
-    >
-      <Header isEverytime={true}>
-        <div className={"text-2xl py-4"}>
-          에브리타임 시간표 <br />
-          업로드하기
-        </div>
-      </Header>
+    <div className={"w-screen min-h-screen flex flex-col pb-24 p-4 "}>
+      <div className={"text-2xl font-bold py-4"}>
+        에브리타임 시간표 <br />
+        업로드하기
+      </div>
       <div className={"flex items-center justify-center flex-col gap-2"}>
         <Image
           src={"/everytime.png"}

@@ -28,6 +28,8 @@ export default function EverytimeBar() {
     })
     const scheduleData = await response.json()
 
+    console.log(scheduleData)
+
     const postSchedules = await fetch("/api/everytime", {
       method: "POST",
       body: JSON.stringify({
