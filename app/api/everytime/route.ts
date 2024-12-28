@@ -43,10 +43,9 @@ export async function POST(request: Request) {
       if (day === date.getDay()) {
         const hour =
           parseInt(schedule.time.split(":")[0]) > 9
-            ? parseInt(schedule.time.split(":")[0])
-            : parseInt(schedule.time.split(":")[0]) + 12
-        const minute = parseInt(schedule.time.split(":")[1])
-        const scheduleDate = addMinutes(addHours(date, hour), minute)
+            ? parseInt(schedule.time.split(":")[0]) - 4
+            : parseInt(schedule.time.split(":")[0]) + 8
+        const scheduleDate = addHours(date, hour)
         neverDate.push(scheduleDate)
         neverDate.push(addMinutes(scheduleDate, 30))
       }
