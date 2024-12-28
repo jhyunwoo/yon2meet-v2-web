@@ -40,7 +40,7 @@ export async function POST(request: Request) {
   for (const date of dateList) {
     for (const schedule of body.schedule) {
       const day = korDateToIndex(schedule.day)
-      if (day === date.getDay()) {
+      if (day === date.getDay() - 1) {
         const hour =
           parseInt(schedule.time.split(":")[0]) > 9
             ? parseInt(schedule.time.split(":")[0]) - 4
